@@ -1,0 +1,24 @@
+{%- comment -%} One building: map (loaded on click), address, distances. Params: id, wide {%- endcomment -%}
+{%- assign L = site.locations[include.id] -%}
+{%- assign lt = t.locations[include.id] -%}
+<article class="loc-card{% if include.wide %} loc-card-wide{% endif %}">
+  <div class="map" data-map="https://maps.google.com/maps?q={{ L.maps_query | url_encode }}&amp;z=15&amp;hl={{ lang }}&amp;output=embed">
+    <div class="map-placeholder">
+      {% include icon.html name="pin" %}
+      <button class="btn btn-sm" type="button">{{ t.map_button }}</button>
+      <small>{{ t.map_note }}</small>
+    </div>
+  </div>
+  <div class="loc-body">
+    <p class="kicker">{{ lt.apartments }}</p>
+    <h3>{{ lt.name }}</h3>
+    <p class="address">{% include icon.html name="pin" %}{{ L.address }}</p>
+    <dl class="distances">
+      {%- for d in lt.distances %}
+      <div><dt>{{ d.place }}</dt><dd>{{ d.value }}</dd></div>
+      {%- endfor %}
+    </dl>
+    <p class="loc-note">{{ lt.note }}</p>
+    <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query={{ L.maps_query | url_encode }}" target="_blank" rel="noopener">{{ t.open_maps }} {% include icon.html name="arrow" %}</a>
+  </div>
+</article>

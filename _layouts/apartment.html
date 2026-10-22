@@ -12,6 +12,7 @@ preload_sizes: "(min-width: 800px) 50vw, 100vw"
     <a class="crumb" href="{{ home }}#apartments">{% include icon.html name="left" %}{{ t.back_home }}</a>
     <h1 class="h-display">{{ a_name }}</h1>
     <ul class="facts facts-lg">
+      <li>{% include icon.html name="pin" %}{{ t.locations[a.location].name }}</li>
       <li>{% include icon.html name="size" %}{{ a.size }} {{ t.sqm }}</li>
       <li>{% include icon.html name="users" %}{{ t.guests_upto | replace: '%N', a.guests }}</li>
       <li>{% include icon.html name="bed" %}{{ t.bedrooms | replace: '%N', a.bedrooms }}</li>
@@ -59,6 +60,9 @@ preload_sizes: "(min-width: 800px) 50vw, 100vw"
         <li>{% include icon.html name="linen" %}{{ t.amenities.linen }}</li>
       </ul>
 
+      <h2>{{ t.location_heading }}</h2>
+      {% include location-card.html id=a.location wide=true %}
+
       <h2 id="availability">{{ t.availability }}</h2>
       <p>{{ t.availability_text }}</p>
       <div class="calendar" data-calendar data-apt="{{ a.id }}"></div>
@@ -72,9 +76,9 @@ preload_sizes: "(min-width: 800px) 50vw, 100vw"
         <p class="aside-name">{{ a_name }}</p>
         {%- if a.price_from %}<p class="price">{{ t.price_from | replace: '%N', a.price_from }}</p>{% endif %}
         <ul class="aside-list plain">
-          {%- for i in t.info limit: 2 %}
-          <li>{% include icon.html name=i.icon %}<span><strong>{{ i.title }}</strong> {{ i.text }}</span></li>
-          {%- endfor %}
+          <li>{% include icon.html name="clock" %}<span><strong>{{ t.info[0].title }}</strong> {{ t.check_times | replace: '%IN', a.checkin | replace: '%OUT', a.checkout }}</span></li>
+          <li>{% include icon.html name="pin" %}<span><strong>{{ t.locations[a.location].name }}</strong> {{ site.locations[a.location].address }}</span></li>
+          <li>{% include icon.html name="calendar" %}<span><strong>{{ t.info[1].title }}</strong> {{ t.info[1].text }}</span></li>
         </ul>
         <a class="btn btn-block" href="#availability">{{ t.hero_cta }}</a>
         {%- if site.booking.direct_discount > 0 %}
@@ -84,6 +88,7 @@ preload_sizes: "(min-width: 800px) 50vw, 100vw"
           <a href="tel:{{ site.contact.phone_link }}">{% include icon.html name="phone" %}{{ site.contact.phone }}</a>
           <a href="https://wa.me/{{ site.contact.phone_link | remove: '+' }}" target="_blank" rel="noopener">{% include icon.html name="whatsapp" %}{{ t.whatsapp }}</a>
         </div>
+        <p class="muted small"><a href="{{ site.locations[a.location].booking_com_url }}" target="_blank" rel="noopener">{{ t.view_booking }} ↗</a></p>
       </div>
     </aside>
   </div>

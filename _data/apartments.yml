@@ -1,74 +1,43 @@
 # The three apartments. Order here = order on the website.
+# `location` refers to one of the `locations` in _config.yml.
+# Details follow the Booking.com listings (room ids in the comments).
 #
 # Adding photos: run tools/optimize-images.sh on the new pictures into
 # assets/img/<id>/, then add the file name (without -480/-960/-1600.webp)
 # to `photos` with a `tag` from the `photo_tags` list in _data/i18n.yml.
 # The first photo is the cover.
 
-- id: standard
-  name: Standard Apartment
-  name_el: Standard Διαμέρισμα
-  size: 70
-  guests: 6
-  bedrooms: 2
-  price_from:            # e.g. 55 → shows "from €55 / night"; leave empty to hide
-  amenities: [wifi, ac, heating, parking, kitchen, washer, tv, iron, hairdryer, veranda, cot]
-  beds:
-    en: ["Bedroom 1 · double bed", "Bedroom 2 · double bed and bunk bed", "Living room · sofa bed"]
-    el: ["Υπνοδωμάτιο 1 · διπλό κρεβάτι", "Υπνοδωμάτιο 2 · διπλό κρεβάτι και κουκέτα", "Σαλόνι · καναπές-κρεβάτι"]
-  summary:
-    en: Bright and practical, with a dining area for the whole family and a baby cot on request.
-    el: Φωτεινό και πρακτικό, με τραπεζαρία για όλη την οικογένεια και βρεφικό κρεβάτι κατόπιν αιτήματος.
-  description:
-    en: >-
-      Our Standard Apartment is a bright, airy 70 m² home with two bedrooms, a living room with sofa bed,
-      a dining area that seats the whole family, a fully equipped kitchen and one bathroom. Large windows
-      let in plenty of light, and the veranda with table and chairs looks over the garden. Travelling with
-      a little one? A travel cot is ready for you.
-    el: >-
-      Το Standard Διαμέρισμα είναι ένα φωτεινό, ευάερο σπίτι 70 τ.μ. με δύο υπνοδωμάτια, σαλόνι με
-      καναπέ-κρεβάτι, τραπεζαρία για όλη την οικογένεια, πλήρως εξοπλισμένη κουζίνα και ένα μπάνιο. Τα μεγάλα
-      παράθυρα φέρνουν άπλετο φως και η βεράντα με τραπέζι και καρέκλες βλέπει στον κήπο. Ταξιδεύετε με
-      μωρό; Σας περιμένει βρεφικό κρεβατάκι.
-  photos:
-    - { src: 01-living, tag: living }
-    - { src: 05-bedroom-double, tag: bedroom }
-    - { src: 03-dining, tag: dining }
-    - { src: 07-bedroom, tag: bedroom }
-    - { src: 02-living, tag: living }
-    - { src: 04-dining, tag: dining }
-    - { src: 06-bedroom, tag: bedroom }
-    - { src: 08-kitchen, tag: kitchen }
-    - { src: 09-bathroom, tag: bathroom }
-    - { src: 10-wardrobe, tag: wardrobe }
-    - { src: 11-cot, tag: cot }
-    - { src: 12-cot, tag: cot }
-
+# Booking.com room 220487303 "Apartment with Garden View"
 - id: natural
   name: Natural Apartment
   name_el: Natural Διαμέρισμα
+  location: mnisikli
   size: 92
   guests: 6
   bedrooms: 2
-  price_from:
-  amenities: [wifi, ac, heating, parking, kitchen, washer, tv, iron, hairdryer, fireplace]
+  checkin: "13:00–23:00"
+  checkout: "08:00–11:00"
+  price_from:            # e.g. 55 → shows "from €55 / night"; leave empty to hide
+  amenities: [wifi, ac, heating, parking, kitchen, dishwasher, washer, tv, iron, hairdryer, fireplace, balcony]
   beds:
     en: ["Bedroom 1 · double bed", "Bedroom 2 · two single beds", "Living room · two sofa beds"]
     el: ["Υπνοδωμάτιο 1 · διπλό κρεβάτι", "Υπνοδωμάτιο 2 · δύο μονά κρεβάτια", "Σαλόνι · δύο καναπέδες-κρεβάτια"]
   summary:
-    en: Warm and spacious, with a fireplace, a family kitchen and a bougainvillea-framed entrance.
-    el: Ζεστό και ευρύχωρο, με τζάκι, οικογενειακή κουζίνα και είσοδο στολισμένη με βουκαμβίλιες.
+    en: Warm and spacious, with a fireplace, a family kitchen, a balcony and a bougainvillea-framed entrance.
+    el: Ζεστό και ευρύχωρο, με τζάκι, οικογενειακή κουζίνα, μπαλκόνι και είσοδο στολισμένη με βουκαμβίλιες.
   description:
     en: >-
       The Natural Apartment is our warmest space: 92 m² with a cosy living room built around a fireplace,
-      two bedrooms, a wooden fully equipped kitchen with dining table, and a bathroom with shower and washing
-      machine. Double-glazed windows, screens and solar hot water keep it comfortable all year, and you walk
-      in under a cascade of bougainvillea.
+      two bedrooms, a wooden fully equipped kitchen with dishwasher and a big dining table, and a bathroom
+      with washing machine. Have your morning coffee on the balcony overlooking the garden. Double-glazed
+      windows, screens and solar hot water keep it comfortable all year, and you walk in under a cascade
+      of bougainvillea.
     el: >-
       Το Natural Διαμέρισμα είναι ο πιο ζεστός μας χώρος: 92 τ.μ. με άνετο σαλόνι γύρω από το τζάκι, δύο
-      υπνοδωμάτια, ξύλινη πλήρως εξοπλισμένη κουζίνα με τραπεζαρία και μπάνιο με ντουζιέρα και πλυντήριο.
-      Διπλά τζάμια, σίτες και ηλιακός θερμοσίφωνας το κάνουν άνετο όλο τον χρόνο, ενώ μπαίνετε κάτω από
-      έναν καταρράκτη από βουκαμβίλιες.
+      υπνοδωμάτια, ξύλινη πλήρως εξοπλισμένη κουζίνα με πλυντήριο πιάτων και μεγάλη τραπεζαρία, και μπάνιο
+      με πλυντήριο ρούχων. Πιείτε τον πρωινό σας καφέ στο μπαλκόνι με θέα στον κήπο. Διπλά τζάμια, σίτες
+      και ηλιακός θερμοσίφωνας το κάνουν άνετο όλο τον χρόνο, ενώ μπαίνετε κάτω από έναν καταρράκτη από
+      βουκαμβίλιες.
   photos:
     - { src: 01-living, tag: living }
     - { src: 06-bedroom-double, tag: bedroom }
@@ -77,6 +46,9 @@
     - { src: 17-bougainvillea, tag: entrance }
     - { src: 03-living, tag: living }
     - { src: 04-living-kitchen, tag: living }
+    - { src: 19-dining, tag: dining }
+    - { src: 18-kitchen, tag: kitchen }
+    - { src: 20-balcony, tag: balcony }
     - { src: 07-bedroom-twin, tag: bedroom }
     - { src: 08-bedroom, tag: bedroom }
     - { src: 16-fireplace, tag: fireplace }
@@ -86,37 +58,99 @@
     - { src: 13-sink, tag: bathroom }
     - { src: 11-laundry, tag: laundry }
     - { src: 14-iron, tag: iron }
+    - { src: 22-entrance-stairs, tag: entrance }
+    - { src: 21-entrance, tag: entrance }
     - { src: 15-entrance, tag: entrance }
 
+# Booking.com room 220487304 "Apartment - Ground Floor"
 - id: garden
   name: Garden Apartment
   name_el: Garden Διαμέρισμα
+  location: mnisikli
   size: 100
-  guests: 6
+  guests: 5
   bedrooms: 2
+  checkin: "13:00–23:00"
+  checkout: "08:00–11:00"
   price_from:
-  amenities: [wifi, ac, heating, parking, kitchen, washer, tv, iron, hairdryer, garden]
+  amenities: [wifi, ac, heating, parking, kitchen, dishwasher, washer, tv, iron, hairdryer, garden]
   beds:
-    en: ["Bedroom 1 · double bed", "Bedroom 2 · two single beds", "Living room · two sofa beds"]
-    el: ["Υπνοδωμάτιο 1 · διπλό κρεβάτι", "Υπνοδωμάτιο 2 · δύο μονά κρεβάτια", "Σαλόνι · δύο καναπέδες-κρεβάτια"]
+    en: ["Bedroom 1 · double bed", "Bedroom 2 · two single beds", "Living room · sofa bed"]
+    el: ["Υπνοδωμάτιο 1 · διπλό κρεβάτι", "Υπνοδωμάτιο 2 · δύο μονά κρεβάτια", "Σαλόνι · καναπές-κρεβάτι"]
   summary:
-    en: Our largest apartment, opening onto a shaded garden patio for breakfast outdoors.
-    el: Το μεγαλύτερο διαμέρισμά μας, με σκιερή αυλή-κήπο για πρωινό στο ύπαιθρο.
+    en: Our largest apartment, on the ground floor, opening onto a green, shaded garden patio.
+    el: Το μεγαλύτερο διαμέρισμά μας, στο ισόγειο, με πράσινη, σκιερή αυλή-κήπο.
   description:
     en: >-
-      At 100 m², the Garden Apartment is our largest: a generous living room with two sofa beds, a big
-      dining table, two bedrooms, a fully equipped kitchen and a bathroom with washing machine. Its best
-      feature is outside — a private, shaded garden patio, perfect for slow breakfasts and warm Cretan evenings.
+      At 100 m², the Garden Apartment is our largest: a ground-floor home with a generous living room,
+      a big dining table, two bedrooms, a modern fully equipped kitchen with dishwasher, and a bathroom
+      with bathtub and washing machine. Its best feature is outside — a private, shaded garden patio full
+      of plants and flowers, perfect for slow breakfasts and warm Cretan evenings.
     el: >-
-      Με 100 τ.μ., το Garden Διαμέρισμα είναι το μεγαλύτερό μας: ευρύχωρο σαλόνι με δύο καναπέδες-κρεβάτια,
-      μεγάλη τραπεζαρία, δύο υπνοδωμάτια, πλήρως εξοπλισμένη κουζίνα και μπάνιο με πλυντήριο. Το καλύτερό
-      του σημείο είναι έξω — μια ιδιωτική, σκιερή αυλή-κήπος, ιδανική για χαλαρά πρωινά και ζεστά κρητικά βράδια.
+      Με 100 τ.μ., το Garden Διαμέρισμα είναι το μεγαλύτερό μας: ένα ισόγειο σπίτι με ευρύχωρο σαλόνι,
+      μεγάλη τραπεζαρία, δύο υπνοδωμάτια, σύγχρονη πλήρως εξοπλισμένη κουζίνα με πλυντήριο πιάτων και
+      μπάνιο με μπανιέρα και πλυντήριο ρούχων. Το καλύτερό του σημείο είναι έξω — μια ιδιωτική, σκιερή
+      αυλή-κήπος γεμάτη φυτά και λουλούδια, ιδανική για χαλαρά πρωινά και ζεστά κρητικά βράδια.
   photos:
     - { src: 01-living, tag: living }
     - { src: 04-garden, tag: garden }
     - { src: 05-bedroom-double, tag: bedroom }
+    - { src: 09-kitchen, tag: kitchen }
+    - { src: 13-garden, tag: garden }
     - { src: 03-dining, tag: dining }
     - { src: 02-living, tag: living }
+    - { src: 10-kitchen, tag: kitchen }
+    - { src: 11-kitchen, tag: kitchen }
     - { src: 06-bedroom-twin, tag: bedroom }
-    - { src: 07-bedroom-single, tag: bedroom }
     - { src: 08-bathroom, tag: bathroom }
+    - { src: 12-bathtub, tag: bathroom }
+    - { src: 14-garden, tag: garden }
+    - { src: 15-garden, tag: garden }
+
+# Booking.com: separate listing "Georgias Family Apartment 2" (Three-Bedroom Apartment, room 220487306)
+- id: standard
+  name: Standard Apartment
+  name_el: Standard Διαμέρισμα
+  location: dramountani
+  size: 110
+  guests: 5
+  bedrooms: 3
+  checkin: "14:00–23:00"
+  checkout: "11:00–12:00"
+  price_from:
+  amenities: [wifi, ac, heating, kitchen, tv, iron, hairdryer, bathtub, balcony, cot]
+  beds:
+    en: ["1 double bed", "2 single beds", "1 futon", "1 sofa bed in the living room"]
+    el: ["1 διπλό κρεβάτι", "2 μονά κρεβάτια", "1 futon", "1 καναπές-κρεβάτι στο σαλόνι"]
+  summary:
+    en: Three bedrooms and a garden-view balcony, a short walk from Amoudara beach.
+    el: Τρία υπνοδωμάτια και μπαλκόνι με θέα στον κήπο, λίγα λεπτά με τα πόδια από την παραλία της Αμμουδάρας.
+  description:
+    en: >-
+      Our Standard Apartment is a bright, spacious 110 m² home in a quiet street of western Heraklion, with
+      three bedrooms, a living room with sofa bed, a dining area that seats the whole family, a fully
+      equipped kitchen and a bathroom with bathtub. The balcony looks over the garden and inner courtyard.
+      Amoudara beach is about a 14-minute walk away, and the old town is 1.5 km. Travelling with a little
+      one? A travel cot is ready for you, free of charge.
+    el: >-
+      Το Standard Διαμέρισμα είναι ένα φωτεινό, ευρύχωρο σπίτι 110 τ.μ. σε ήσυχο δρόμο στα δυτικά του
+      Ηρακλείου, με τρία υπνοδωμάτια, σαλόνι με καναπέ-κρεβάτι, τραπεζαρία για όλη την οικογένεια, πλήρως
+      εξοπλισμένη κουζίνα και μπάνιο με μπανιέρα. Το μπαλκόνι βλέπει στον κήπο και στην εσωτερική αυλή.
+      Η παραλία της Αμμουδάρας απέχει περίπου 14 λεπτά με τα πόδια και η παλιά πόλη 1,5 χλμ. Ταξιδεύετε
+      με μωρό; Σας περιμένει βρεφικό κρεβατάκι, δωρεάν.
+  photos:
+    - { src: 01-living, tag: living }
+    - { src: 05-bedroom-double, tag: bedroom }
+    - { src: 03-dining, tag: dining }
+    - { src: 07-bedroom, tag: bedroom }
+    - { src: 14-kitchen, tag: kitchen }
+    - { src: 02-living, tag: living }
+    - { src: 15-living, tag: living }
+    - { src: 04-dining, tag: dining }
+    - { src: 13-dining-kitchen, tag: kitchen }
+    - { src: 06-bedroom, tag: bedroom }
+    - { src: 08-kitchen, tag: kitchen }
+    - { src: 09-bathroom, tag: bathroom }
+    - { src: 10-wardrobe, tag: wardrobe }
+    - { src: 11-cot, tag: cot }
+    - { src: 12-cot, tag: cot }

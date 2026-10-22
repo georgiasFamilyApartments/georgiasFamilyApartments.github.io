@@ -15,9 +15,16 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
         <a class="btn" href="{{ home }}book/">{{ t.hero_cta }}</a>
         <a class="btn btn-ghost" href="#apartments">{{ t.hero_secondary }}</a>
       </div>
-      {%- if site.booking.direct_discount > 0 %}
-      <p class="badge">{% include icon.html name="tag" %}{{ t.direct_badge | replace: '%N', site.booking.direct_discount }}</p>
-      {%- endif %}
+      <div class="hero-proof">
+        {%- if site.booking.direct_discount > 0 %}
+        <p class="badge">{% include icon.html name="tag" %}{{ t.direct_badge | replace: '%N', site.booking.direct_discount }}</p>
+        {%- endif %}
+        {%- if site.booking.rating %}
+        <a class="rating" href="{{ site.locations.mnisikli.booking_com_url }}" target="_blank" rel="noopener">
+          <strong>{{ site.booking.rating }}</strong>{{ t.rating | replace: '%R', site.booking.reviews }}
+        </a>
+        {%- endif %}
+      </div>
     </div>
     <div class="hero-media">
       {% include img.html dir="natural" src="01-living" alt=t.photo_tags.living sizes="(min-width: 900px) 34vw, 100vw" class="hm-main" eager=true %}
@@ -83,7 +90,7 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
 
     <h3 class="amenities-title">{{ t.amenities_title }}</h3>
     <ul class="amenities plain">
-      {%- assign common = "wifi,ac,heating,parking,kitchen,washer,tv,iron,hairdryer,linen" | split: "," %}
+      {%- assign common = "wifi,ac,heating,kitchen,tv,iron,hairdryer,linen" | split: "," %}
       {%- for k in common %}
       <li>{% include icon.html name=k %}{{ t.amenities[k] }}</li>
       {%- endfor %}
@@ -93,17 +100,10 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
 
 <section class="section" id="heraklion">
   <div class="wrap">
-    <div class="split split-top">
-      <header>
-        <h2 class="h-display">{{ t.heraklion_title }}</h2>
-        <p>{{ t.heraklion_text }}</p>
-      </header>
-      <dl class="distances">
-        {%- for d in t.distances %}
-        <div><dt>{{ d.place }}</dt><dd>{{ d.value }}</dd></div>
-        {%- endfor %}
-      </dl>
-    </div>
+    <header class="section-head">
+      <h2 class="h-display">{{ t.heraklion_title }}</h2>
+      <p>{{ t.heraklion_text }}</p>
+    </header>
     <div class="city-grid" data-gallery>
       {%- assign city = "harbour-sunset,koules-fortress,lions-square,marina,loggia,harbour-night,seafront,venetian-arsenals" | split: "," %}
       {%- for c in city %}
@@ -133,26 +133,16 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
 </section>
 
 <section class="section" id="location">
-  <div class="wrap split">
-    <div>
+  <div class="wrap">
+    <header class="section-head">
       <h2 class="h-display">{{ t.location_title }}</h2>
-      <p class="address">{% include icon.html name="pin" %}{{ site.contact.address }}</p>
-      <ul class="features plain">
-        {%- for d in t.directions %}
-        <li>
-          <span class="feature-icon">{% include icon.html name=d.icon %}</span>
-          <div><h3>{{ d.title }}</h3><p>{{ d.text }}</p></div>
-        </li>
-        {%- endfor %}
-      </ul>
-    </div>
-    <div class="map" data-map="https://maps.google.com/maps?q={{ site.contact.maps_query | url_encode }}&amp;z=15&amp;hl={{ lang }}&amp;output=embed">
-      <div class="map-placeholder">
-        {% include icon.html name="pin" %}
-        <button class="btn" type="button">{{ t.map_button }}</button>
-        <small>{{ t.map_note }} ·
-          <a href="https://www.google.com/maps/search/?api=1&amp;query={{ site.contact.maps_query | url_encode }}" target="_blank" rel="noopener">{{ t.open_maps }} ↗</a></small>
-      </div>
+      <p>{{ t.location_intro }}</p>
+    </header>
+    <div class="loc-grid">
+      {%- for l in site.locations %}
+      {%- assign loc_id = l[0] %}
+      {% include location-card.html id=loc_id %}
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -180,28 +170,27 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
-  "name": {{ site.title | jsonify }},
-  "url": {{ home | absolute_url | jsonify }},
-  "image": {{ '/assets/img/natural/01-living-1600.webp' | absolute_url | jsonify }},
-  "logo": {{ '/assets/img/brand/logo.webp' | absolute_url | jsonify }},
-  "telephone": {{ site.contact.phone_link | jsonify }},
-  "email": {{ site.contact.email | jsonify }},
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Mnisikli 23",
-    "postalCode": "713 05",
-    "addressLocality": "Heraklion",
-    "addressRegion": "Crete",
-    "addressCountry": "GR"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": {{ site.contact.lat }}, "longitude": {{ site.contact.lng }} },
-  "checkinTime": "13:00",
-  "checkoutTime": "11:00",
-  "amenityFeature": [
-    { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
-    { "@type": "LocationFeatureSpecification", "name": "Free parking", "value": true },
-    { "@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true }
+  "@graph": [
+    {%- for l in site.locations %}
+    {%- assign L = l[1] %}
+    {
+      "@type": "LodgingBusiness",
+      "name": "{{ site.title }} · {{ t.locations[l[0]].apartments }}",
+      "url": {{ home | absolute_url | jsonify }},
+      "image": {{ '/assets/img/natural/01-living-1600.webp' | absolute_url | jsonify }},
+      "telephone": {{ site.contact.phone_link | jsonify }},
+      "email": {{ site.contact.email | jsonify }},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": {{ L.street | jsonify }},
+        "postalCode": {{ L.postcode | jsonify }},
+        "addressLocality": "Heraklion",
+        "addressRegion": "Crete",
+        "addressCountry": "GR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": {{ L.lat }}, "longitude": {{ L.lng }} }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
   ]
 }
 </script>

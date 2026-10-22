@@ -85,6 +85,12 @@ button, input, select, textarea { font: inherit; color: inherit; }
   color: var(--brand-dark); font-weight: 600; font-size: .92rem;
 }
 
+.hero-proof { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 1.5rem; }
+.hero-proof .badge { margin: 0; }
+.rating { display: inline-flex; align-items: center; gap: .45rem; color: var(--muted); font-size: .92rem; text-decoration: none; }
+.rating strong { display: grid; place-items: center; min-width: 2.4rem; height: 2rem; padding-inline: .4rem; border-radius: 8px 8px 8px 0; background: #003b95; color: #fff; font-size: .95rem; }
+.rating:hover { color: var(--ink); }
+
 /* Header */
 .site-header {
   position: sticky; top: 0; z-index: 50; height: var(--header-h);
@@ -122,7 +128,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .section-head { max-width: 680px; margin-bottom: 2.5rem; }
 .section-head p { color: var(--muted); font-size: 1.1rem; }
 .split { display: grid; gap: clamp(32px, 6vw, 72px); align-items: center; }
-.split-top { align-items: end; margin-bottom: 2.5rem; }
 @media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; } }
 
 /* Hero */
@@ -175,6 +180,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .apt-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
 .apt-card:hover .apt-card-media img { transform: scale(1.045); }
 .apt-card-body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
+.apt-card-loc { display: flex; align-items: center; gap: .35rem; margin-bottom: .3rem; font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); }
+.apt-card-loc .i { width: 15px; height: 15px; }
 .apt-card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.6rem; margin-bottom: .5rem; }
 .apt-card h3 a { color: var(--ink); text-decoration: none; }
 .apt-card p { color: var(--muted); }
@@ -227,6 +234,19 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .info-card p { color: var(--muted); margin: 0; font-size: .97rem; }
 
 /* Location */
+.loc-grid { display: grid; gap: 24px; }
+@media (min-width: 900px) { .loc-grid { grid-template-columns: 1fr 1fr; } }
+.loc-card { display: grid; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.loc-card .map { aspect-ratio: 16 / 9; border-radius: 0; }
+.loc-body { padding: 22px 24px 24px; }
+.loc-body .kicker { margin-bottom: .4rem; }
+.loc-body h3 { font-family: var(--serif); font-weight: 500; font-size: 1.6rem; margin-bottom: .3rem; }
+.loc-body .address { margin-bottom: 1.2rem; }
+.loc-note { color: var(--muted); margin: 1rem 0 .8rem; }
+@media (min-width: 700px) {
+  .loc-card-wide { grid-template-columns: 1fr 1fr; }
+  .loc-card-wide .map { aspect-ratio: auto; min-height: 100%; }
+}
 .address { display: flex; align-items: center; gap: .5rem; font-weight: 600; margin-bottom: 2rem; }
 .address .i { color: var(--brand); }
 .map { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; background: var(--tint); }

@@ -87,7 +87,7 @@ scripts: [/assets/js/booking.js]
             <a data-whatsapp href="https://wa.me/{{ site.contact.phone_link | remove: '+' }}" target="_blank" rel="noopener">{% include icon.html name="whatsapp" %}{{ t.whatsapp }}</a>
             <a href="tel:{{ site.contact.phone_link }}">{% include icon.html name="phone" %}{{ site.contact.phone }}</a>
           </div>
-          <p class="muted small"><a href="{{ site.booking.booking_com_url }}" target="_blank" rel="noopener">{{ t.prefer_booking }} ↗</a></p>
+          <p class="muted small"><a data-booking-com href="{{ site.locations.mnisikli.booking_com_url }}" target="_blank" rel="noopener">{{ t.prefer_booking }} ↗</a></p>
         </div>
       </aside>
     </div>

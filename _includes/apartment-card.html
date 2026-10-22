@@ -6,6 +6,7 @@
     {% include img.html dir=a.id src=cover alt="" sizes="(min-width: 1000px) 33vw, (min-width: 700px) 50vw, 100vw" %}
   </a>
   <div class="apt-card-body">
+    <p class="apt-card-loc">{% include icon.html name="pin" %}{{ t.locations[a.location].name }}</p>
     <h3><a href="{{ home }}apartments/{{ a.id }}/">{{ a_name }}</a></h3>
     <ul class="facts">
       <li>{% include icon.html name="size" %}{{ a.size }} {{ t.sqm }}</li>

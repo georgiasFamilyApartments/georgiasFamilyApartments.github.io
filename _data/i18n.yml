@@ -5,7 +5,7 @@ en:
   lang_label: "English"
   switch_label: "Ελληνικά"
   switch_short: "ΕΛ"
-  meta_description: "Three spacious family apartments (70–100 m², up to 6 guests) in a quiet, green neighbourhood of Heraklion, Crete. Free parking & Wi-Fi. Book direct and save."
+  meta_description: "Three spacious family apartments (92–110 m², up to 6 guests) in quiet, green neighbourhoods of Heraklion, Crete, close to the old town and Amoudara beach. Book direct and save."
   skip: "Skip to content"
   menu: "Menu"
   nav:
@@ -17,7 +17,7 @@ en:
 
   hero_kicker: "Family apartments · Heraklion, Crete"
   hero_title: "Your home away from home in Heraklion"
-  hero_text: "Three spacious, spotless apartments in a quiet, green neighbourhood — a short ride from the old town, the harbour and the beaches."
+  hero_text: "Three spacious, spotless apartments in quiet, green neighbourhoods of Heraklion — a short ride from the old town, the harbour and the beaches."
   hero_cta: "Check availability"
   hero_secondary: "See the apartments"
   direct_badge: "Book direct and save %N%"
@@ -32,15 +32,15 @@ en:
 
   welcome_title: "We can't wait to welcome you"
   welcome_text:
-    - "Georgia's Family Apartments are three family-run homes on Mnisikli Street in Mastampas, one of Heraklion's calmest residential neighbourhoods. Newly built to modern earthquake standards and surrounded by gardens, they're the kind of place you come back to after a long day at the beach and immediately feel at home."
-    - "Whether you're a family, a group of friends or travelling solo, you'll have a whole apartment to yourselves: full kitchen, washing machine, air conditioning, free Wi-Fi and free parking."
+    - "Georgia's Family Apartments are three family-run homes in two of Heraklion's calmest residential neighbourhoods: the Natural and Garden apartments on Mnisikli Street in Mastampas, and the Standard Apartment on Dramountani Street in the west of the city, a short walk from Amoudara beach. Surrounded by gardens, they're the kind of place you come back to after a long day at the beach and immediately feel at home."
+    - "Whether you're a family, a group of friends or travelling solo, you'll have a whole apartment to yourselves: full kitchen, air conditioning, free Wi-Fi and a balcony or garden to enjoy the Cretan weather."
   features:
-    - { icon: home, title: "A real neighbourhood", text: "Quiet, green streets with bakeries, supermarkets and tavernas around the corner — and the historic centre just 2 km away." }
+    - { icon: home, title: "A real neighbourhood", text: "Quiet, green streets with bakeries, supermarkets and tavernas around the corner — and the historic centre less than 2 km away." }
     - { icon: sparkle, title: "Spotless & comfortable", text: "Fresh linen and towels, well-equipped kitchens and comfortable beds — family-run and looked after with care." }
     - { icon: sun, title: "Your Cretan holiday", text: "Knossos, the Venetian harbour, sandy beaches and mountain villages are all an easy drive from your door." }
 
   apartments_title: "The apartments"
-  apartments_intro: "Each apartment hosts up to six guests, with two bedrooms, a living room, a full kitchen and its own bathroom."
+  apartments_intro: "Each apartment is a whole home for five or six guests, with two or three bedrooms, a living room, a full kitchen and its own bathroom."
   sqm: "m²"
   guests_upto: "Up to %N guests"
   bedrooms: "%N bedrooms"
@@ -60,6 +60,9 @@ en:
     iron: "Iron & board"
     hairdryer: "Hair dryer"
     linen: "Linen & towels"
+    dishwasher: "Dishwasher"
+    balcony: "Balcony, garden view"
+    bathtub: "Bathtub"
     veranda: "Veranda, garden view"
     cot: "Baby cot"
     fireplace: "Fireplace"
@@ -79,14 +82,10 @@ en:
     wardrobe: "Wardrobe"
     cot: "Baby cot"
     garden: "Garden patio"
+    balcony: "Balcony"
 
   heraklion_title: "Discover Heraklion"
-  heraklion_text: "Crete's capital is lively, historic and full of good food. From the apartments you're a few minutes from the Venetian harbour and Koules fortress, Lions Square and the market streets — and Knossos, the island's most famous Minoan palace, is only about 4 km away."
-  distances:
-    - { place: "Old town & Lions Square", value: "2 km" }
-    - { place: "Heraklion port", value: "3 km" }
-    - { place: "Heraklion airport", value: "5 km" }
-    - { place: "Knossos palace", value: "4 km" }
+  heraklion_text: "Crete's capital is lively, historic and full of good food. From either address you're a few minutes from the Venetian harbour and Koules fortress, Lions Square and the market streets — and Knossos, the island's most famous Minoan palace, is a short drive away."
   heraklion_photos:
     harbour-sunset: "Sunset over the Venetian harbour"
     koules-fortress: "Koules fortress from above"
@@ -99,16 +98,36 @@ en:
 
   info_title: "Good to know"
   info:
-    - { icon: clock, title: "Check-in & check-out", text: "Check-in from 13:00 to 23:00. Check-out from 08:00 to 11:00. Need something different? Just ask." }
+    - { icon: clock, title: "Check-in & check-out", text: "Check-in from 13:00 (Standard: 14:00) until 23:00. Check-out by 11:00 (Standard: 12:00). Need something different? Just ask." }
     - { icon: calendar, title: "Free cancellation", text: "Cancel free of charge up to 14 days before arrival. Within 14 days of arrival, 50% of the total price is charged." }
     - { icon: receipt, title: "Taxes & fees", text: "VAT (13%) and municipal tax (0.5%) are included. The state climate-resilience fee is paid on arrival: €8 per night (April–October) or €2 per night (November–March)." }
-    - { icon: users, title: "Families welcome", text: "No age restrictions. A baby cot is available — let us know when you book." }
+    - { icon: users, title: "Families welcome", text: "Children of all ages are welcome. A baby cot is available free of charge — let us know when you book." }
 
-  location_title: "Getting here"
-  directions:
-    - { icon: plane, title: "From the airport", text: "Heraklion airport (HER) is about 5 km away — roughly 15 minutes by taxi or car." }
-    - { icon: ship, title: "From the port", text: "The ferry port is about 3 km away — roughly 10 minutes by taxi." }
-    - { icon: car, title: "By car", text: "Free parking is available at the apartments." }
+  location_title: "Where we are"
+  location_intro: "The apartments are in two quiet neighbourhoods of Heraklion, about 1.5 km apart. Taxis from the airport or the ferry port take around 10–15 minutes to either address."
+  locations:
+    mnisikli:
+      name: "Mastampas"
+      apartments: "Natural & Garden apartments"
+      note: "Free private parking on site."
+      distances:
+        - { place: "Old town & Lions Square", value: "2 km" }
+        - { place: "Ferry port", value: "3 km" }
+        - { place: "Airport", value: "5 km" }
+        - { place: "Knossos palace", value: "4 km" }
+    dramountani:
+      name: "Therissos, west Heraklion"
+      apartments: "Standard Apartment"
+      note: "Amoudara beach is about a 14-minute walk."
+      distances:
+        - { place: "Old town & Lions Square", value: "1.5 km" }
+        - { place: "Ferry port", value: "2.5 km" }
+        - { place: "Airport", value: "6 km" }
+        - { place: "Amoudara beach", value: "1 km" }
+  location_heading: "Location"
+  check_times: "Check-in %IN · Check-out %OUT"
+  view_booking: "See it on Booking.com"
+  rating: "/10 on Booking.com · %R reviews"
   map_button: "Show map"
   map_note: "Loads Google Maps"
   open_maps: "Open in Google Maps"
@@ -186,7 +205,7 @@ el:
   lang_label: "Ελληνικά"
   switch_label: "English"
   switch_short: "EN"
-  meta_description: "Τρία ευρύχωρα οικογενειακά διαμερίσματα (70–100 τ.μ., έως 6 άτομα) σε ήσυχη, πράσινη γειτονιά του Ηρακλείου Κρήτης. Δωρεάν parking και Wi-Fi. Κλείστε απευθείας και κερδίστε."
+  meta_description: "Τρία ευρύχωρα οικογενειακά διαμερίσματα (92–110 τ.μ., έως 6 άτομα) σε ήσυχες, πράσινες γειτονιές του Ηρακλείου Κρήτης, κοντά στην παλιά πόλη και την Αμμουδάρα. Κλείστε απευθείας και κερδίστε."
   skip: "Μετάβαση στο περιεχόμενο"
   menu: "Μενού"
   nav:
@@ -198,7 +217,7 @@ el:
 
   hero_kicker: "Οικογενειακά διαμερίσματα · Ηράκλειο Κρήτης"
   hero_title: "Το σπίτι σας μακριά από το σπίτι, στο Ηράκλειο"
-  hero_text: "Τρία ευρύχωρα, πεντακάθαρα διαμερίσματα σε μια ήσυχη, πράσινη γειτονιά — λίγα λεπτά από την παλιά πόλη, το λιμάνι και τις παραλίες."
+  hero_text: "Τρία ευρύχωρα, πεντακάθαρα διαμερίσματα σε ήσυχες, πράσινες γειτονιές του Ηρακλείου — λίγα λεπτά από την παλιά πόλη, το λιμάνι και τις παραλίες."
   hero_cta: "Δείτε διαθεσιμότητα"
   hero_secondary: "Τα διαμερίσματα"
   direct_badge: "Κλείστε απευθείας με έκπτωση %N%"
@@ -213,15 +232,15 @@ el:
 
   welcome_title: "Ανυπομονούμε να σας καλωσορίσουμε"
   welcome_text:
-    - "Τα Georgia's Family Apartments είναι τρία οικογενειακά διαμερίσματα στην οδό Μνησικλή, στον Μασταμπά, μια από τις πιο ήσυχες γειτονιές του Ηρακλείου. Χτισμένα με σύγχρονες αντισεισμικές προδιαγραφές και περιτριγυρισμένα από κήπους, είναι το μέρος όπου επιστρέφετε μετά από μια μέρα στη θάλασσα και νιώθετε αμέσως σαν στο σπίτι σας."
-    - "Είτε είστε οικογένεια, παρέα φίλων ή ταξιδεύετε μόνοι, θα έχετε ένα ολόκληρο διαμέρισμα δικό σας: πλήρη κουζίνα, πλυντήριο, κλιματισμό, δωρεάν Wi-Fi και δωρεάν parking."
+    - "Τα Georgia's Family Apartments είναι τρία οικογενειακά διαμερίσματα σε δύο από τις πιο ήσυχες γειτονιές του Ηρακλείου: το Natural και το Garden στην οδό Μνησικλή στον Μασταμπά, και το Standard στην οδό Δραμουντάνη στα δυτικά της πόλης, λίγα λεπτά με τα πόδια από την παραλία της Αμμουδάρας. Περιτριγυρισμένα από κήπους, είναι το μέρος όπου επιστρέφετε μετά από μια μέρα στη θάλασσα και νιώθετε αμέσως σαν στο σπίτι σας."
+    - "Είτε είστε οικογένεια, παρέα φίλων ή ταξιδεύετε μόνοι, θα έχετε ένα ολόκληρο διαμέρισμα δικό σας: πλήρη κουζίνα, κλιματισμό, δωρεάν Wi-Fi και μπαλκόνι ή κήπο για να απολαύσετε τον κρητικό καιρό."
   features:
-    - { icon: home, title: "Μια αληθινή γειτονιά", text: "Ήσυχοι, πράσινοι δρόμοι με φούρνους, σούπερ μάρκετ και ταβέρνες στη γωνία — και το ιστορικό κέντρο μόλις 2 χλμ. μακριά." }
+    - { icon: home, title: "Μια αληθινή γειτονιά", text: "Ήσυχοι, πράσινοι δρόμοι με φούρνους, σούπερ μάρκετ και ταβέρνες στη γωνία — και το ιστορικό κέντρο σε λιγότερο από 2 χλμ." }
     - { icon: sparkle, title: "Πεντακάθαρα & άνετα", text: "Φρέσκα σεντόνια και πετσέτες, καλά εξοπλισμένες κουζίνες και αναπαυτικά κρεβάτια — με τη φροντίδα μιας οικογενειακής επιχείρησης." }
     - { icon: sun, title: "Οι διακοπές σας στην Κρήτη", text: "Κνωσός, ενετικό λιμάνι, αμμουδιές και ορεινά χωριά — όλα σε μικρή απόσταση με το αυτοκίνητο." }
 
   apartments_title: "Τα διαμερίσματα"
-  apartments_intro: "Κάθε διαμέρισμα φιλοξενεί έως έξι άτομα, με δύο υπνοδωμάτια, σαλόνι, πλήρη κουζίνα και δικό του μπάνιο."
+  apartments_intro: "Κάθε διαμέρισμα είναι ένα ολόκληρο σπίτι για πέντε ή έξι άτομα, με δύο ή τρία υπνοδωμάτια, σαλόνι, πλήρη κουζίνα και δικό του μπάνιο."
   sqm: "τ.μ."
   guests_upto: "Έως %N άτομα"
   bedrooms: "%N υπνοδωμάτια"
@@ -241,6 +260,9 @@ el:
     iron: "Σίδερο & σιδερώστρα"
     hairdryer: "Σεσουάρ"
     linen: "Σεντόνια & πετσέτες"
+    dishwasher: "Πλυντήριο πιάτων"
+    balcony: "Μπαλκόνι με θέα στον κήπο"
+    bathtub: "Μπανιέρα"
     veranda: "Βεράντα με θέα στον κήπο"
     cot: "Βρεφικό κρεβάτι"
     fireplace: "Τζάκι"
@@ -260,14 +282,10 @@ el:
     wardrobe: "Ντουλάπα"
     cot: "Βρεφικό κρεβάτι"
     garden: "Αυλή-κήπος"
+    balcony: "Μπαλκόνι"
 
   heraklion_title: "Ανακαλύψτε το Ηράκλειο"
-  heraklion_text: "Η πρωτεύουσα της Κρήτης είναι ζωντανή, ιστορική και γεμάτη καλό φαγητό. Από τα διαμερίσματα απέχετε λίγα λεπτά από το ενετικό λιμάνι και τον Κούλε, τα Λιοντάρια και την αγορά — και η Κνωσός, το διασημότερο μινωικό ανάκτορο, είναι μόλις 4 χλμ. μακριά."
-  distances:
-    - { place: "Παλιά πόλη & Λιοντάρια", value: "2 χλμ." }
-    - { place: "Λιμάνι Ηρακλείου", value: "3 χλμ." }
-    - { place: "Αεροδρόμιο Ηρακλείου", value: "5 χλμ." }
-    - { place: "Ανάκτορο Κνωσού", value: "4 χλμ." }
+  heraklion_text: "Η πρωτεύουσα της Κρήτης είναι ζωντανή, ιστορική και γεμάτη καλό φαγητό. Και από τις δύο διευθύνσεις απέχετε λίγα λεπτά από το ενετικό λιμάνι και τον Κούλε, τα Λιοντάρια και την αγορά — και η Κνωσός, το διασημότερο μινωικό ανάκτορο, είναι σε μικρή απόσταση με το αυτοκίνητο."
   heraklion_photos:
     harbour-sunset: "Ηλιοβασίλεμα στο ενετικό λιμάνι"
     koules-fortress: "Ο Κούλες από ψηλά"
@@ -280,16 +298,36 @@ el:
 
   info_title: "Χρήσιμες πληροφορίες"
   info:
-    - { icon: clock, title: "Άφιξη & αναχώρηση", text: "Check-in από 13:00 έως 23:00. Check-out από 08:00 έως 11:00. Χρειάζεστε κάτι διαφορετικό; Ρωτήστε μας." }
+    - { icon: clock, title: "Άφιξη & αναχώρηση", text: "Check-in από 13:00 (Standard: 14:00) έως 23:00. Check-out έως 11:00 (Standard: 12:00). Χρειάζεστε κάτι διαφορετικό; Ρωτήστε μας." }
     - { icon: calendar, title: "Δωρεάν ακύρωση", text: "Δωρεάν ακύρωση έως 14 ημέρες πριν την άφιξη. Εντός 14 ημερών από την άφιξη χρεώνεται το 50% της συνολικής τιμής." }
     - { icon: receipt, title: "Φόροι & τέλη", text: "Ο ΦΠΑ (13%) και ο δημοτικός φόρος (0,5%) περιλαμβάνονται. Το τέλος ανθεκτικότητας στην κλιματική κρίση καταβάλλεται κατά την άφιξη: €8 ανά βράδυ (Απρίλιος–Οκτώβριος) ή €2 ανά βράδυ (Νοέμβριος–Μάρτιος)." }
-    - { icon: users, title: "Φιλικά για οικογένειες", text: "Χωρίς όριο ηλικίας. Διαθέτουμε βρεφικό κρεβάτι — ενημερώστε μας κατά την κράτηση." }
+    - { icon: users, title: "Φιλικά για οικογένειες", text: "Παιδιά όλων των ηλικιών είναι ευπρόσδεκτα. Διαθέτουμε βρεφικό κρεβάτι δωρεάν — ενημερώστε μας κατά την κράτηση." }
 
-  location_title: "Πώς θα έρθετε"
-  directions:
-    - { icon: plane, title: "Από το αεροδρόμιο", text: "Το αεροδρόμιο Ηρακλείου (HER) απέχει περίπου 5 χλμ. — περίπου 15 λεπτά με ταξί ή αυτοκίνητο." }
-    - { icon: ship, title: "Από το λιμάνι", text: "Το λιμάνι απέχει περίπου 3 χλμ. — περίπου 10 λεπτά με ταξί." }
-    - { icon: car, title: "Με αυτοκίνητο", text: "Υπάρχει δωρεάν parking στα διαμερίσματα." }
+  location_title: "Πού βρισκόμαστε"
+  location_intro: "Τα διαμερίσματα βρίσκονται σε δύο ήσυχες γειτονιές του Ηρακλείου, περίπου 1,5 χλμ. μεταξύ τους. Με ταξί από το αεροδρόμιο ή το λιμάνι φτάνετε σε περίπου 10–15 λεπτά."
+  locations:
+    mnisikli:
+      name: "Μασταμπάς"
+      apartments: "Natural & Garden διαμερίσματα"
+      note: "Δωρεάν ιδιωτικό parking."
+      distances:
+        - { place: "Παλιά πόλη & Λιοντάρια", value: "2 χλμ." }
+        - { place: "Λιμάνι", value: "3 χλμ." }
+        - { place: "Αεροδρόμιο", value: "5 χλμ." }
+        - { place: "Ανάκτορο Κνωσού", value: "4 χλμ." }
+    dramountani:
+      name: "Θέρισσος, δυτικό Ηράκλειο"
+      apartments: "Standard Διαμέρισμα"
+      note: "Η παραλία της Αμμουδάρας είναι περίπου 14 λεπτά με τα πόδια."
+      distances:
+        - { place: "Παλιά πόλη & Λιοντάρια", value: "1,5 χλμ." }
+        - { place: "Λιμάνι", value: "2,5 χλμ." }
+        - { place: "Αεροδρόμιο", value: "6 χλμ." }
+        - { place: "Παραλία Αμμουδάρας", value: "1 χλμ." }
+  location_heading: "Τοποθεσία"
+  check_times: "Check-in %IN · Check-out %OUT"
+  view_booking: "Δείτε το στο Booking.com"
+  rating: "/10 στο Booking.com · %R κριτικές"
   map_button: "Εμφάνιση χάρτη"
   map_note: "Φορτώνει τους Χάρτες Google"
   open_maps: "Άνοιγμα στους Χάρτες Google"

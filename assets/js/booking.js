@@ -245,6 +245,8 @@
     const tooMany = a && guests() > a.guests;
     sum('warn').hidden = !tooMany;
     sum('warn').textContent = tooMany ? fill(T.tooMany, a.guests) : '';
+    const bc = $('[data-booking-com]');
+    if (bc && a) bc.href = a.bookingUrl;
     const wa = $('[data-whatsapp]');
     if (wa) wa.href = `https://wa.me/${cfg.phone.replace('+', '')}?text=${encodeURIComponent(messageText(false))}`;
   }

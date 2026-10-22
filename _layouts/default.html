@@ -85,8 +85,15 @@
         <ul class="plain">
           <li><a href="tel:{{ site.contact.phone_link }}">{{ site.contact.phone }}</a></li>
           <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
-          <li>{{ site.contact.address }}</li>
-          <li><a href="{{ site.booking.booking_com_url }}" rel="noopener" target="_blank">{{ t.footer_booking }} ↗</a></li>
+          {%- for l in site.locations %}
+          <li>{{ l[1].address }}</li>
+          {%- endfor %}
+        </ul>
+        <h2 class="footer-h">{{ t.footer_booking }}</h2>
+        <ul class="plain">
+          {%- for l in site.locations %}
+          <li><a href="{{ l[1].booking_com_url }}" rel="noopener" target="_blank">{{ t.locations[l[0]].apartments }} ↗</a></li>
+          {%- endfor %}
         </ul>
       </div>
     </div>
