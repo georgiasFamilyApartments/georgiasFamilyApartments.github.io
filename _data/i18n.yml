@@ -5,7 +5,7 @@ en:
   lang_label: "English"
   switch_label: "Ελληνικά"
   switch_short: "ΕΛ"
-  meta_description: "Three spacious family apartments (92–110 m², up to 6 guests) in quiet, green neighbourhoods of Heraklion, Crete, close to the old town and Amoudara beach. Book direct and save."
+  meta_description: "Four spacious family apartments (70–110 m², up to 6 guests) in quiet, green neighbourhoods of Heraklion, Crete, close to the old town and Amoudara beach. Book direct and save."
   skip: "Skip to content"
   menu: "Menu"
   nav:
@@ -17,7 +17,7 @@ en:
 
   hero_kicker: "Family apartments · Heraklion, Crete"
   hero_title: "Your home away from home in Heraklion"
-  hero_text: "Three spacious, spotless apartments in quiet, green neighbourhoods of Heraklion — a short ride from the old town, the harbour and the beaches."
+  hero_text: "Four spacious, spotless apartments in quiet, green neighbourhoods of Heraklion — a short ride from the old town, the harbour and the beaches."
   hero_cta: "Check availability"
   hero_secondary: "See the apartments"
   direct_badge: "Book direct and save %N%"
@@ -32,7 +32,7 @@ en:
 
   welcome_title: "We can't wait to welcome you"
   welcome_text:
-    - "Georgia's Family Apartments are three family-run homes in two of Heraklion's calmest residential neighbourhoods: the Natural and Garden apartments on Mnisikli Street in Mastampas, and the Standard Apartment on Dramountani Street in the west of the city, a short walk from Amoudara beach. Surrounded by gardens, they're the kind of place you come back to after a long day at the beach and immediately feel at home."
+    - "Georgia's Family Apartments are four family-run homes in two of Heraklion's calmest residential neighbourhoods: the Standard, Natural and Garden apartments on Mnisikli Street in Mastampas, and the Three-Bedroom Apartment on Dramountani Street in the west of the city, a short walk from Amoudara beach. Surrounded by gardens, they're the kind of place you come back to after a long day at the beach and immediately feel at home."
     - "Whether you're a family, a group of friends or travelling solo, you'll have a whole apartment to yourselves: full kitchen, air conditioning, free Wi-Fi and a balcony or garden to enjoy the Cretan weather."
   features:
     - { icon: home, title: "A real neighbourhood", text: "Quiet, green streets with bakeries, supermarkets and tavernas around the corner — and the historic centre less than 2 km away." }
@@ -83,6 +83,7 @@ en:
     cot: "Baby cot"
     garden: "Garden patio"
     balcony: "Balcony"
+    view: "View"
 
   heraklion_title: "Discover Heraklion"
   heraklion_text: "Crete's capital is lively, historic and full of good food. From either address you're a few minutes from the Venetian harbour and Koules fortress, Lions Square and the market streets — and Knossos, the island's most famous Minoan palace, is a short drive away."
@@ -98,7 +99,7 @@ en:
 
   info_title: "Good to know"
   info:
-    - { icon: clock, title: "Check-in & check-out", text: "Check-in from 13:00 (Standard: 14:00) until 23:00. Check-out by 11:00 (Standard: 12:00). Need something different? Just ask." }
+    - { icon: clock, title: "Check-in & check-out", text: "Check-in from 13:00 (Three-Bedroom: 14:00) until 23:00. Check-out by 11:00 (Three-Bedroom: 12:00). Need something different? Just ask." }
     - { icon: calendar, title: "Free cancellation", text: "Cancel free of charge up to 14 days before arrival. Within 14 days of arrival, 50% of the total price is charged." }
     - { icon: receipt, title: "Taxes & fees", text: "VAT (13%) and municipal tax (0.5%) are included. The state climate-resilience fee is paid on arrival: €8 per night (April–October) or €2 per night (November–March)." }
     - { icon: users, title: "Families welcome", text: "Children of all ages are welcome. A baby cot is available free of charge — let us know when you book." }
@@ -108,7 +109,7 @@ en:
   locations:
     mnisikli:
       name: "Mastampas"
-      apartments: "Natural & Garden apartments"
+      apartments: "Standard, Natural & Garden apartments"
       note: "Free private parking on site."
       distances:
         - { place: "Old town & Lions Square", value: "2 km" }
@@ -117,7 +118,7 @@ en:
         - { place: "Knossos palace", value: "4 km" }
     dramountani:
       name: "Therissos, west Heraklion"
-      apartments: "Standard Apartment"
+      apartments: "Three-Bedroom Apartment"
       note: "Amoudara beach is about a 14-minute walk."
       distances:
         - { place: "Old town & Lions Square", value: "1.5 km" }
@@ -205,7 +206,7 @@ el:
   lang_label: "Ελληνικά"
   switch_label: "English"
   switch_short: "EN"
-  meta_description: "Τρία ευρύχωρα οικογενειακά διαμερίσματα (92–110 τ.μ., έως 6 άτομα) σε ήσυχες, πράσινες γειτονιές του Ηρακλείου Κρήτης, κοντά στην παλιά πόλη και την Αμμουδάρα. Κλείστε απευθείας και κερδίστε."
+  meta_description: "Τέσσερα ευρύχωρα οικογενειακά διαμερίσματα (70–110 τ.μ., έως 6 άτομα) σε ήσυχες, πράσινες γειτονιές του Ηρακλείου Κρήτης, κοντά στην παλιά πόλη και την Αμμουδάρα. Κλείστε απευθείας και κερδίστε."
   skip: "Μετάβαση στο περιεχόμενο"
   menu: "Μενού"
   nav:
@@ -217,7 +218,7 @@ el:
 
   hero_kicker: "Οικογενειακά διαμερίσματα · Ηράκλειο Κρήτης"
   hero_title: "Το σπίτι σας μακριά από το σπίτι, στο Ηράκλειο"
-  hero_text: "Τρία ευρύχωρα, πεντακάθαρα διαμερίσματα σε ήσυχες, πράσινες γειτονιές του Ηρακλείου — λίγα λεπτά από την παλιά πόλη, το λιμάνι και τις παραλίες."
+  hero_text: "Τέσσερα ευρύχωρα, πεντακάθαρα διαμερίσματα σε ήσυχες, πράσινες γειτονιές του Ηρακλείου — λίγα λεπτά από την παλιά πόλη, το λιμάνι και τις παραλίες."
   hero_cta: "Δείτε διαθεσιμότητα"
   hero_secondary: "Τα διαμερίσματα"
   direct_badge: "Κλείστε απευθείας με έκπτωση %N%"
@@ -232,7 +233,7 @@ el:
 
   welcome_title: "Ανυπομονούμε να σας καλωσορίσουμε"
   welcome_text:
-    - "Τα Georgia's Family Apartments είναι τρία οικογενειακά διαμερίσματα σε δύο από τις πιο ήσυχες γειτονιές του Ηρακλείου: το Natural και το Garden στην οδό Μνησικλή στον Μασταμπά, και το Standard στην οδό Δραμουντάνη στα δυτικά της πόλης, λίγα λεπτά με τα πόδια από την παραλία της Αμμουδάρας. Περιτριγυρισμένα από κήπους, είναι το μέρος όπου επιστρέφετε μετά από μια μέρα στη θάλασσα και νιώθετε αμέσως σαν στο σπίτι σας."
+    - "Τα Georgia's Family Apartments είναι τέσσερα οικογενειακά διαμερίσματα σε δύο από τις πιο ήσυχες γειτονιές του Ηρακλείου: το Standard, το Natural και το Garden στην οδό Μνησικλή στον Μασταμπά, και το Διαμέρισμα 3 Υπνοδωματίων στην οδό Δραμουντάνη στα δυτικά της πόλης, λίγα λεπτά με τα πόδια από την παραλία της Αμμουδάρας. Περιτριγυρισμένα από κήπους, είναι το μέρος όπου επιστρέφετε μετά από μια μέρα στη θάλασσα και νιώθετε αμέσως σαν στο σπίτι σας."
     - "Είτε είστε οικογένεια, παρέα φίλων ή ταξιδεύετε μόνοι, θα έχετε ένα ολόκληρο διαμέρισμα δικό σας: πλήρη κουζίνα, κλιματισμό, δωρεάν Wi-Fi και μπαλκόνι ή κήπο για να απολαύσετε τον κρητικό καιρό."
   features:
     - { icon: home, title: "Μια αληθινή γειτονιά", text: "Ήσυχοι, πράσινοι δρόμοι με φούρνους, σούπερ μάρκετ και ταβέρνες στη γωνία — και το ιστορικό κέντρο σε λιγότερο από 2 χλμ." }
@@ -283,6 +284,7 @@ el:
     cot: "Βρεφικό κρεβάτι"
     garden: "Αυλή-κήπος"
     balcony: "Μπαλκόνι"
+    view: "Θέα"
 
   heraklion_title: "Ανακαλύψτε το Ηράκλειο"
   heraklion_text: "Η πρωτεύουσα της Κρήτης είναι ζωντανή, ιστορική και γεμάτη καλό φαγητό. Και από τις δύο διευθύνσεις απέχετε λίγα λεπτά από το ενετικό λιμάνι και τον Κούλε, τα Λιοντάρια και την αγορά — και η Κνωσός, το διασημότερο μινωικό ανάκτορο, είναι σε μικρή απόσταση με το αυτοκίνητο."
@@ -298,7 +300,7 @@ el:
 
   info_title: "Χρήσιμες πληροφορίες"
   info:
-    - { icon: clock, title: "Άφιξη & αναχώρηση", text: "Check-in από 13:00 (Standard: 14:00) έως 23:00. Check-out έως 11:00 (Standard: 12:00). Χρειάζεστε κάτι διαφορετικό; Ρωτήστε μας." }
+    - { icon: clock, title: "Άφιξη & αναχώρηση", text: "Check-in από 13:00 (3 Υπνοδωματίων: 14:00) έως 23:00. Check-out έως 11:00 (3 Υπνοδωματίων: 12:00). Χρειάζεστε κάτι διαφορετικό; Ρωτήστε μας." }
     - { icon: calendar, title: "Δωρεάν ακύρωση", text: "Δωρεάν ακύρωση έως 14 ημέρες πριν την άφιξη. Εντός 14 ημερών από την άφιξη χρεώνεται το 50% της συνολικής τιμής." }
     - { icon: receipt, title: "Φόροι & τέλη", text: "Ο ΦΠΑ (13%) και ο δημοτικός φόρος (0,5%) περιλαμβάνονται. Το τέλος ανθεκτικότητας στην κλιματική κρίση καταβάλλεται κατά την άφιξη: €8 ανά βράδυ (Απρίλιος–Οκτώβριος) ή €2 ανά βράδυ (Νοέμβριος–Μάρτιος)." }
     - { icon: users, title: "Φιλικά για οικογένειες", text: "Παιδιά όλων των ηλικιών είναι ευπρόσδεκτα. Διαθέτουμε βρεφικό κρεβάτι δωρεάν — ενημερώστε μας κατά την κράτηση." }
@@ -308,7 +310,7 @@ el:
   locations:
     mnisikli:
       name: "Μασταμπάς"
-      apartments: "Natural & Garden διαμερίσματα"
+      apartments: "Standard, Natural & Garden διαμερίσματα"
       note: "Δωρεάν ιδιωτικό parking."
       distances:
         - { place: "Παλιά πόλη & Λιοντάρια", value: "2 χλμ." }
@@ -317,7 +319,7 @@ el:
         - { place: "Ανάκτορο Κνωσού", value: "4 χλμ." }
     dramountani:
       name: "Θέρισσος, δυτικό Ηράκλειο"
-      apartments: "Standard Διαμέρισμα"
+      apartments: "Διαμέρισμα 3 Υπνοδωματίων"
       note: "Η παραλία της Αμμουδάρας είναι περίπου 14 λεπτά με τα πόδια."
       distances:
         - { place: "Παλιά πόλη & Λιοντάρια", value: "1,5 χλμ." }

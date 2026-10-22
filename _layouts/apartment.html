@@ -97,7 +97,7 @@ preload_sizes: "(min-width: 800px) 50vw, 100vw"
 <section class="section section-tint">
   <div class="wrap">
     <h2 class="h-display">{{ t.other_apartments }}</h2>
-    <div class="apt-grid apt-grid-2">
+    <div class="apt-grid apt-grid-3">
       {%- for o in site.data.apartments %}
       {%- unless o.id == a.id %}
       {% include apartment-card.html apt=o %}

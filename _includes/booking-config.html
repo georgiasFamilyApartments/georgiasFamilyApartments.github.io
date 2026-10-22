@@ -12,7 +12,7 @@
   "feeWinter": {{ site.booking.climate_fee_winter | default: 0 }},
   "apartments": {
     {%- for a in site.data.apartments %}
-    {{ a.id | jsonify }}: { "name": {% if lang == 'el' %}{{ a.name_el | jsonify }}{% else %}{{ a.name | jsonify }}{% endif %}, "nameEn": {{ a.name | jsonify }}, "guests": {{ a.guests }}, "bookingUrl": {{ site.locations[a.location].booking_com_url | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {{ a.id | jsonify }}: { "name": {% if lang == 'el' %}{{ a.name_el | jsonify }}{% else %}{{ a.name | jsonify }}{% endif %}, "nameEn": {{ a.name | jsonify }}, "guests": {{ a.guests }}, "open": {{ a.open_periods | default: nil | jsonify }}, "bookingUrl": {{ site.locations[a.location].booking_com_url | jsonify }} }{% unless forloop.last %},{% endunless %}
     {%- endfor %}
   },
   "t": {

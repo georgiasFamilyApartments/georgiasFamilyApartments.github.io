@@ -1,6 +1,6 @@
 # Georgia's Family Apartments — website
 
-Static, bilingual (English / Ελληνικά) website for the three apartments in Heraklion,
+Static, bilingual (English / Ελληνικά) website for the four apartments in Heraklion,
 published with GitHub Pages at **www.creteimages.eu**.
 
 No frameworks, no database: plain HTML/CSS/JS built by Jekyll (which GitHub runs for you).
@@ -23,11 +23,16 @@ Photos are served as responsive WebP and lazy-loaded, so pages stay light as the
    (Airbnb: *Listing → Availability → Connect calendars → Export*). Add them in
    *Settings → Secrets and variables → Actions → New repository secret*:
 
-   | Secret          | Value                                   |
-   |-----------------|-----------------------------------------|
-   | `ICAL_STANDARD` | export link(s) for the Standard Apartment |
-   | `ICAL_NATURAL`  | export link(s) for the Natural Apartment  |
-   | `ICAL_GARDEN`   | export link(s) for the Garden Apartment   |
+   | Secret               | Booking.com property → room type |
+   |----------------------|----------------------------------|
+   | `ICAL_STANDARD`      | Georgia's Family Apartment (Mnisikli) → *Standard Apartment* |
+   | `ICAL_NATURAL`       | Georgia's Family Apartment (Mnisikli) → *Apartment with Garden View* |
+   | `ICAL_GARDEN`        | Georgia's Family Apartment (Mnisikli) → *Apartment – Ground Floor* |
+   | `ICAL_THREE_BEDROOM` | Georgias Family Apartment 2 (Dramountani) |
+
+   Booking.com only exports dates that are **booked or explicitly closed**. Dates that are
+   simply not opened for sale (0 rooms to sell) look closed in the extranet but are not in
+   the export, so the website would show them as free — close them explicitly instead.
 
    Several links for one apartment (e.g. Booking.com + Airbnb) can be separated with spaces.
    The site checks them every 30 minutes and republishes only when something changed.
@@ -71,7 +76,7 @@ jekyll serve                           # → http://localhost:4000
 
 ```
 _config.yml              site settings
-_data/apartments.yml     the three apartments
+_data/apartments.yml     the four apartments
 _data/i18n.yml           all texts, English + Greek
 _layouts/                page templates (home, apartment, book)
 _includes/               shared pieces (header/footer live in _layouts/default.html)

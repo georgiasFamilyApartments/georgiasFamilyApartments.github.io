@@ -35,6 +35,14 @@
     for (const [start, end] of availability?.apartments?.[apt] || []) {
       for (let d = start; d < end; d = addDays(d, 1)) set.add(d);
     }
+    // Apartments with open_periods can only be booked inside those periods
+    const open = cfg.apartments[apt]?.open;
+    if (open) {
+      const last = addDays(today, 600); // beyond the calendar's 18-month range
+      for (let d = today; d < last; d = addDays(d, 1)) {
+        if (!open.some(([a, b]) => d >= a && d < b)) set.add(d);
+      }
+    }
     return set;
   }
 

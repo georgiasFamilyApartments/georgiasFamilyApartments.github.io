@@ -4,7 +4,7 @@
 #
 # Setup (once): Settings → Pages → Source: "GitHub Actions"
 #               Settings → Secrets and variables → Actions → add ICAL_STANDARD,
-#               ICAL_NATURAL, ICAL_GARDEN with the calendar export links.
+#               ICAL_NATURAL, ICAL_GARDEN, ICAL_THREE_BEDROOM with the calendar export links.
 name: Build and deploy
 
 on:
@@ -38,6 +38,7 @@ jobs:
           ICAL_STANDARD: ${{ secrets.ICAL_STANDARD }}
           ICAL_NATURAL: ${{ secrets.ICAL_NATURAL }}
           ICAL_GARDEN: ${{ secrets.ICAL_GARDEN }}
+          ICAL_THREE_BEDROOM: ${{ secrets.ICAL_THREE_BEDROOM }}
           LIVE_URL: https://www.creteimages.eu/assets/data/availability.json
         run: python3 tools/sync_availability.py
 

@@ -1,11 +1,67 @@
-# The three apartments. Order here = order on the website.
+# The apartments. Order here = order on the website.
 # `location` refers to one of the `locations` in _config.yml.
+# `open_periods` (optional): the only date ranges the apartment can be booked,
+# as [first night, check-out day]. Every other date shows as unavailable.
+# Use it when Booking.com doesn't export the closed dates; remove it to rely on the feed alone.
 # Details follow the Booking.com listings (room ids in the comments).
 #
 # Adding photos: run tools/optimize-images.sh on the new pictures into
 # assets/img/<id>/, then add the file name (without -480/-960/-1600.webp)
 # to `photos` with a `tag` from the `photo_tags` list in _data/i18n.yml.
 # The first photo is the cover.
+
+# Booking.com room 220487301 "Standard Apartment" (Mnisikli)
+- id: standard
+  name: Standard Apartment
+  name_el: Standard Διαμέρισμα
+  location: mnisikli
+  size: 70
+  guests: 6
+  bedrooms: 2
+  checkin: "13:00–23:00"
+  checkout: "08:00–11:00"
+  price_from:            # e.g. 55 → shows "from €55 / night"; leave empty to hide
+  amenities: [wifi, ac, heating, parking, kitchen, washer, tv, iron, hairdryer, bathtub, balcony, cot]
+  beds:
+    en: ["Bedroom 1 · double bed", "Bedroom 2 · double bed and bunk bed", "Living room · sofa bed"]
+    el: ["Υπνοδωμάτιο 1 · διπλό κρεβάτι", "Υπνοδωμάτιο 2 · διπλό κρεβάτι και κουκέτα", "Σαλόνι · καναπές-κρεβάτι"]
+  summary:
+    en: Bright and family-friendly, with a bunk-bed room the kids will love and a sunny balcony.
+    el: Φωτεινό και φιλικό για οικογένειες, με δωμάτιο με κουκέτα που θα λατρέψουν τα παιδιά και ηλιόλουστο μπαλκόνι.
+  description:
+    en: >-
+      The Standard Apartment is a bright 70 m² home made for families: two bedrooms — one with a double bed,
+      the other with a double bed and a bunk bed — a living room with sofa bed and TV, a light, modern
+      kitchen and a bathroom with bathtub and washing machine. Step out onto the balcony for breakfast
+      among the flowers. Socket covers, safety gates and a travel cot are available for little ones.
+    el: >-
+      Το Standard Διαμέρισμα είναι ένα φωτεινό σπίτι 70 τ.μ. φτιαγμένο για οικογένειες: δύο υπνοδωμάτια —
+      το ένα με διπλό κρεβάτι, το άλλο με διπλό κρεβάτι και κουκέτα — σαλόνι με καναπέ-κρεβάτι και
+      τηλεόραση, φωτεινή σύγχρονη κουζίνα και μπάνιο με μπανιέρα και πλυντήριο ρούχων. Βγείτε στο μπαλκόνι
+      για πρωινό ανάμεσα στα λουλούδια. Για τους μικρούς επισκέπτες υπάρχουν προστατευτικά πριζών, πορτάκια
+      ασφαλείας και βρεφικό κρεβατάκι.
+  photos:
+    - { src: 01-living, tag: living }
+    - { src: 02-bedroom-bunk, tag: bedroom }
+    - { src: 04-kitchen, tag: kitchen }
+    - { src: 05-balcony, tag: balcony }
+    - { src: 03-bedroom-double, tag: bedroom }
+    - { src: 09-living-tv, tag: living }
+    - { src: 06-bedroom-double, tag: bedroom }
+    - { src: 07-kitchen, tag: kitchen }
+    - { src: 13-kitchen, tag: kitchen }
+    - { src: 08-balcony, tag: balcony }
+    - { src: 19-balcony, tag: balcony }
+    - { src: 10-bedroom-single, tag: living }
+    - { src: 11-bedroom, tag: bedroom }
+    - { src: 12-cot, tag: cot }
+    - { src: 14-bathroom, tag: bathroom }
+    - { src: 15-bathtub, tag: bathroom }
+    - { src: 16-laundry, tag: laundry }
+    - { src: 17-iron, tag: iron }
+    - { src: 18-terrace, tag: balcony }
+    - { src: 21-terrace, tag: balcony }
+    - { src: 20-view, tag: view }
 
 # Booking.com room 220487303 "Apartment with Garden View"
 - id: natural
@@ -107,11 +163,12 @@
     - { src: 14-garden, tag: garden }
     - { src: 15-garden, tag: garden }
 
-# Booking.com: separate listing "Georgias Family Apartment 2" (Three-Bedroom Apartment, room 220487306)
-- id: standard
-  name: Standard Apartment
-  name_el: Standard Διαμέρισμα
+# Booking.com: separate property "Georgias Family Apartment 2" (Dramountani)
+- id: three-bedroom
+  name: Three-Bedroom Apartment
+  name_el: Διαμέρισμα 3 Υπνοδωματίων
   location: dramountani
+  open_periods: [["2027-03-01", "2027-04-01"]]   # open only in March 2027
   size: 110
   guests: 5
   bedrooms: 3
@@ -127,13 +184,13 @@
     el: Τρία υπνοδωμάτια και μπαλκόνι με θέα στον κήπο, λίγα λεπτά με τα πόδια από την παραλία της Αμμουδάρας.
   description:
     en: >-
-      Our Standard Apartment is a bright, spacious 110 m² home in a quiet street of western Heraklion, with
+      Our Three-Bedroom Apartment is a bright, spacious 110 m² home in a quiet street of western Heraklion, with
       three bedrooms, a living room with sofa bed, a dining area that seats the whole family, a fully
       equipped kitchen and a bathroom with bathtub. The balcony looks over the garden and inner courtyard.
       Amoudara beach is about a 14-minute walk away, and the old town is 1.5 km. Travelling with a little
       one? A travel cot is ready for you, free of charge.
     el: >-
-      Το Standard Διαμέρισμα είναι ένα φωτεινό, ευρύχωρο σπίτι 110 τ.μ. σε ήσυχο δρόμο στα δυτικά του
+      Το Διαμέρισμα 3 Υπνοδωματίων είναι ένα φωτεινό, ευρύχωρο σπίτι 110 τ.μ. σε ήσυχο δρόμο στα δυτικά του
       Ηρακλείου, με τρία υπνοδωμάτια, σαλόνι με καναπέ-κρεβάτι, τραπεζαρία για όλη την οικογένεια, πλήρως
       εξοπλισμένη κουζίνα και μπάνιο με μπανιέρα. Το μπαλκόνι βλέπει στον κήπο και στην εσωτερική αυλή.
       Η παραλία της Αμμουδάρας απέχει περίπου 14 λεπτά με τα πόδια και η παλιά πόλη 1,5 χλμ. Ταξιδεύετε
