@@ -168,7 +168,7 @@
   name: Three-Bedroom Apartment
   name_el: Διαμέρισμα 3 Υπνοδωματίων
   location: dramountani
-  open_periods: [["2027-03-01", "2027-04-01"]]   # open only in March 2027
+  open_periods: [["2027-03-01", "2100-01-01"]]   # unavailable until end of February 2027, open after
   size: 110
   guests: 5
   bedrooms: 3
