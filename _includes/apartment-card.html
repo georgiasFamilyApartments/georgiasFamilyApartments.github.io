@@ -1,0 +1,21 @@
+{%- assign a = include.apt -%}
+{%- if lang == 'el' %}{% assign a_name = a.name_el %}{% else %}{% assign a_name = a.name %}{% endif -%}
+<article class="apt-card">
+  <a class="apt-card-media" href="{{ home }}apartments/{{ a.id }}/" tabindex="-1" aria-hidden="true">
+    {%- assign cover = a.photos.first.src %}
+    {% include img.html dir=a.id src=cover alt="" sizes="(min-width: 1000px) 33vw, (min-width: 700px) 50vw, 100vw" %}
+  </a>
+  <div class="apt-card-body">
+    <h3><a href="{{ home }}apartments/{{ a.id }}/">{{ a_name }}</a></h3>
+    <ul class="facts">
+      <li>{% include icon.html name="size" %}{{ a.size }} {{ t.sqm }}</li>
+      <li>{% include icon.html name="users" %}{{ t.guests_upto | replace: '%N', a.guests }}</li>
+      <li>{% include icon.html name="bed" %}{{ t.bedrooms | replace: '%N', a.bedrooms }}</li>
+    </ul>
+    <p>{{ a.summary[lang] }}</p>
+    <div class="apt-card-foot">
+      {%- if a.price_from %}<span class="price">{{ t.price_from | replace: '%N', a.price_from }}</span>{% endif %}
+      <a class="link-arrow" href="{{ home }}apartments/{{ a.id }}/">{{ t.view }} {% include icon.html name="arrow" %}</a>
+    </div>
+  </div>
+</article>

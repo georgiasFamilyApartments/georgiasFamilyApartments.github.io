@@ -1,0 +1,101 @@
+{%- include lang.html -%}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: t.meta_description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {%- unless page.no_alternate %}
+  <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
+  <link rel="alternate" hreflang="el" href="{{ el_url | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ en_url | absolute_url }}">
+  {%- endunless %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: t.meta_description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ page.og_image | default: '/assets/img/brand/og-image.jpg' | absolute_url }}">
+  <meta property="og:locale" content="{% if lang == 'el' %}el_GR{% else %}en_GB{% endif %}">
+  <meta name="theme-color" content="#f7f0ee">
+  <link rel="icon" type="image/png" href="{{ '/assets/img/brand/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/brand/apple-touch-icon.png' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  {%- assign preload = page.preload | default: layout.preload %}
+  {%- if preload %}{% assign preload = preload | relative_url %}
+  <link rel="preload" as="image" href="{{ preload }}-960.webp" imagesrcset="{{ preload }}-480.webp 480w, {{ preload }}-960.webp 960w, {{ preload }}-1600.webp 1600w" imagesizes="{{ page.preload_sizes | default: layout.preload_sizes | default: '100vw' }}">
+  {%- endif %}
+  <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  {%- assign scripts = page.scripts | default: layout.scripts %}
+  {%- for script in scripts %}
+  <script src="{{ script | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  {%- endfor %}
+</head>
+<body>
+  <a class="skip" href="#main">{{ t.skip }}</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ home }}">
+        <img src="{{ '/assets/img/brand/emblem.webp' | relative_url }}" alt="" width="35" height="40">
+        <span>Georgia's <em>Family Apartments</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        {% include icon.html name="menu" %}<span class="sr">{{ t.menu }}</span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="{{ home }}#apartments">{{ t.nav.apartments }}</a>
+        <a href="{{ home }}#heraklion">{{ t.nav.heraklion }}</a>
+        <a href="{{ home }}#info">{{ t.nav.info }}</a>
+        <a href="{{ home }}#contact">{{ t.nav.contact }}</a>
+        {%- unless page.no_alternate %}
+        <a class="lang-switch" href="{{ alt_url | relative_url }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}" title="{{ t.switch_label }}">{{ t.switch_short }}</a>
+        {%- endunless %}
+        <a class="btn btn-sm" href="{{ home }}book/">{{ t.nav.book }}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img class="footer-logo" src="{{ '/assets/img/brand/logo.webp' | relative_url }}" alt="Georgia's Family Apartment — We can't wait to welcome you!" width="300" height="140" loading="lazy">
+        <p class="muted">{{ t.footer_tagline }}</p>
+      </div>
+      <div>
+        <h2 class="footer-h">{{ t.nav.apartments }}</h2>
+        <ul class="plain">
+          {%- for a in site.data.apartments %}
+          <li><a href="{{ home }}apartments/{{ a.id }}/">{% if lang == 'el' %}{{ a.name_el }}{% else %}{{ a.name }}{% endif %}</a></li>
+          {%- endfor %}
+          <li><a href="{{ home }}book/">{{ t.nav.book }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-h">{{ t.nav.contact }}</h2>
+        <ul class="plain">
+          <li><a href="tel:{{ site.contact.phone_link }}">{{ site.contact.phone }}</a></li>
+          <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+          <li>{{ site.contact.address }}</li>
+          <li><a href="{{ site.booking.booking_com_url }}" rel="noopener" target="_blank">{{ t.footer_booking }} ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© {{ site.time | date: '%Y' }} Georgia's Family Apartments · Heraklion, Crete</span>
+      {%- unless page.no_alternate %}
+      <a href="{{ alt_url | relative_url }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}">{{ t.switch_label }}</a>
+      {%- endunless %}
+    </div>
+  </footer>
+</body>
+</html>

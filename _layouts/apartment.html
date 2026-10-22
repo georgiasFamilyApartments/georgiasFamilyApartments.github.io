@@ -1,0 +1,105 @@
+---
+layout: default
+scripts: [/assets/js/booking.js]
+preload_sizes: "(min-width: 800px) 50vw, 100vw"
+---
+{%- include lang.html -%}
+{%- assign a = site.data.apartments | where: "id", page.apt | first -%}
+{%- if lang == 'el' %}{% assign a_name = a.name_el %}{% else %}{% assign a_name = a.name %}{% endif -%}
+
+<section class="apt-hero">
+  <div class="wrap">
+    <a class="crumb" href="{{ home }}#apartments">{% include icon.html name="left" %}{{ t.back_home }}</a>
+    <h1 class="h-display">{{ a_name }}</h1>
+    <ul class="facts facts-lg">
+      <li>{% include icon.html name="size" %}{{ a.size }} {{ t.sqm }}</li>
+      <li>{% include icon.html name="users" %}{{ t.guests_upto | replace: '%N', a.guests }}</li>
+      <li>{% include icon.html name="bed" %}{{ t.bedrooms | replace: '%N', a.bedrooms }}</li>
+    </ul>
+
+    <div class="apt-gallery" data-gallery>
+      {%- for p in a.photos %}
+      {%- assign cap = t.photo_tags[p.tag] %}
+      <a class="g-{{ forloop.index }}" href="{{ '/assets/img/' | append: a.id | append: '/' | append: p.src | append: '-1600.webp' | relative_url }}" data-caption="{{ cap }}">
+        {%- if forloop.index <= 5 %}
+        {%- if forloop.first %}
+        {% include img.html dir=a.id src=p.src alt=cap sizes="(min-width: 800px) 50vw, 100vw" eager=true %}
+        {%- else %}
+        {% include img.html dir=a.id src=p.src alt=cap sizes="(min-width: 800px) 25vw, 50vw" %}
+        {%- endif %}
+        {%- else %}<span class="sr">{{ cap }}</span>
+        {%- endif %}
+      </a>
+      {%- endfor %}
+      <button class="btn btn-light all-photos" type="button" data-open-gallery>
+        {% include icon.html name="grid" %}{{ t.all_photos | replace: '%N', a.photos.size }}
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section apt-body">
+  <div class="wrap apt-layout">
+    <div class="apt-main">
+      <h2>{{ t.about }}</h2>
+      <p class="lead">{{ a.description[lang] }}</p>
+
+      <h2>{{ t.sleeping }}</h2>
+      <ul class="beds plain">
+        {%- for b in a.beds[lang] %}
+        <li>{% include icon.html name="bed" %}{{ b }}</li>
+        {%- endfor %}
+      </ul>
+
+      <h2>{{ t.amenities_apt }}</h2>
+      <ul class="amenities plain">
+        {%- for k in a.amenities %}
+        <li>{% include icon.html name=k %}{{ t.amenities[k] }}</li>
+        {%- endfor %}
+        <li>{% include icon.html name="linen" %}{{ t.amenities.linen }}</li>
+      </ul>
+
+      <h2 id="availability">{{ t.availability }}</h2>
+      <p>{{ t.availability_text }}</p>
+      <div class="calendar" data-calendar data-apt="{{ a.id }}"></div>
+      <div class="cal-cta">
+        <a class="btn" data-request href="{{ home }}book/?apt={{ a.id }}">{{ t.request }}</a>
+      </div>
+    </div>
+
+    <aside class="apt-aside">
+      <div class="sticky-card">
+        <p class="aside-name">{{ a_name }}</p>
+        {%- if a.price_from %}<p class="price">{{ t.price_from | replace: '%N', a.price_from }}</p>{% endif %}
+        <ul class="aside-list plain">
+          {%- for i in t.info limit: 2 %}
+          <li>{% include icon.html name=i.icon %}<span><strong>{{ i.title }}</strong> {{ i.text }}</span></li>
+          {%- endfor %}
+        </ul>
+        <a class="btn btn-block" href="#availability">{{ t.hero_cta }}</a>
+        {%- if site.booking.direct_discount > 0 %}
+        <p class="badge">{% include icon.html name="tag" %}{{ t.direct_badge | replace: '%N', site.booking.direct_discount }}</p>
+        {%- endif %}
+        <div class="aside-contact">
+          <a href="tel:{{ site.contact.phone_link }}">{% include icon.html name="phone" %}{{ site.contact.phone }}</a>
+          <a href="https://wa.me/{{ site.contact.phone_link | remove: '+' }}" target="_blank" rel="noopener">{% include icon.html name="whatsapp" %}{{ t.whatsapp }}</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <h2 class="h-display">{{ t.other_apartments }}</h2>
+    <div class="apt-grid apt-grid-2">
+      {%- for o in site.data.apartments %}
+      {%- unless o.id == a.id %}
+      {% include apartment-card.html apt=o %}
+      {%- endunless %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include booking-config.html %}

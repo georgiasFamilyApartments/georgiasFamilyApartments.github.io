@@ -1,0 +1,42 @@
+title: Georgia's Family Apartments
+url: https://www.creteimages.eu
+baseurl: ""
+
+# ── Contact details (shown on every page) ───────────────────────────────
+contact:
+  phone: "+30 698 244 6045"
+  phone_link: "+306982446045"      # digits only, used for tel: and WhatsApp
+  email: dimisgiort@hotmail.com
+  address: "Mnisikli 23, 713 05 Heraklion, Crete"
+  maps_query: "Mnisikli 23, Heraklion 713 05, Greece"
+  lat: 35.32087
+  lng: 25.12719
+
+# ── Booking ──────────────────────────────────────────────────────────────
+booking:
+  # Free key from https://web3forms.com (enter the email that should receive
+  # booking requests). While empty, the form opens the guest's email app instead.
+  web3forms_key: ""
+  booking_com_url: https://www.booking.com/Share-i1wxn3
+  direct_discount: 10        # % shown as "book direct" saving; set 0 to hide
+  min_nights: 1
+  max_guests: 6
+  # State climate-resilience fee per night, paid on arrival
+  climate_fee_summer: 8      # April–October
+  climate_fee_winter: 2      # November–March
+
+# ── Build ────────────────────────────────────────────────────────────────
+markdown: kramdown
+exclude:
+  - tools
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+
+defaults:
+  - scope: { path: "" }
+    values: { lang: en }
+  - scope: { path: "el" }
+    values: { lang: el }

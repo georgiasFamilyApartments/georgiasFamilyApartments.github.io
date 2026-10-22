@@ -1,0 +1,76 @@
+# Builds the website and publishes it to GitHub Pages.
+# Runs on every push to main, and every 30 minutes to pull the latest booked
+# dates from the Booking.com / Airbnb calendars (redeploying only if they changed).
+#
+# Setup (once): Settings → Pages → Source: "GitHub Actions"
+#               Settings → Secrets and variables → Actions → add ICAL_STANDARD,
+#               ICAL_NATURAL, ICAL_GARDEN with the calendar export links.
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.decide.outputs.deploy }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync availability from calendar feeds
+        id: sync
+        continue-on-error: true   # a broken feed must never block publishing the site
+        env:
+          ICAL_STANDARD: ${{ secrets.ICAL_STANDARD }}
+          ICAL_NATURAL: ${{ secrets.ICAL_NATURAL }}
+          ICAL_GARDEN: ${{ secrets.ICAL_GARDEN }}
+          LIVE_URL: https://www.creteimages.eu/assets/data/availability.json
+        run: python3 tools/sync_availability.py
+
+      - name: Decide whether to deploy
+        id: decide
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "${{ steps.sync.outputs.changed }}" = "true" ]; then
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No calendar changes — skipping deploy."
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/configure-pages@v5
+        if: steps.decide.outputs.deploy == 'true'
+
+      - name: Build with Jekyll
+        if: steps.decide.outputs.deploy == 'true'
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.decide.outputs.deploy == 'true'
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.deploy == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

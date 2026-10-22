@@ -1,0 +1,10 @@
+{%- comment -%}
+  Responsive photo. Params: dir, src (file name without -960.webp), alt,
+  sizes (default 100vw), class, eager (true for above-the-fold images).
+{%- endcomment -%}
+{%- assign base = '/assets/img/' | append: include.dir | append: '/' | append: include.src | relative_url -%}
+<img src="{{ base }}-960.webp"
+     srcset="{{ base }}-480.webp 480w, {{ base }}-960.webp 960w, {{ base }}-1600.webp 1600w"
+     sizes="{{ include.sizes | default: '100vw' }}"
+     alt="{{ include.alt | escape }}"{% if include.class %} class="{{ include.class }}"{% endif %}
+     {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">

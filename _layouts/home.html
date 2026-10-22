@@ -1,0 +1,207 @@
+---
+layout: default
+preload: /assets/img/natural/01-living
+preload_sizes: "(min-width: 900px) 34vw, 100vw"
+---
+{%- include lang.html -%}
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="kicker">{{ t.hero_kicker }}</p>
+      <h1>{{ t.hero_title }}</h1>
+      <p class="lead">{{ t.hero_text }}</p>
+      <div class="actions">
+        <a class="btn" href="{{ home }}book/">{{ t.hero_cta }}</a>
+        <a class="btn btn-ghost" href="#apartments">{{ t.hero_secondary }}</a>
+      </div>
+      {%- if site.booking.direct_discount > 0 %}
+      <p class="badge">{% include icon.html name="tag" %}{{ t.direct_badge | replace: '%N', site.booking.direct_discount }}</p>
+      {%- endif %}
+    </div>
+    <div class="hero-media">
+      {% include img.html dir="natural" src="01-living" alt=t.photo_tags.living sizes="(min-width: 900px) 34vw, 100vw" class="hm-main" eager=true %}
+      {% include img.html dir="natural" src="17-bougainvillea" alt=t.photo_tags.entrance sizes="(min-width: 900px) 17vw, 50vw" class="hm-a" %}
+      {% include img.html dir="heraklion" src="harbour-sunset" alt=t.heraklion_photos.harbour-sunset sizes="(min-width: 900px) 17vw, 50vw" class="hm-b" %}
+    </div>
+  </div>
+
+  <form class="wrap quick" action="{{ home }}book/" method="get">
+    <label>
+      <span>{{ t.quick.apartment }}</span>
+      <select name="apt">
+        <option value="">{{ t.quick.any }}</option>
+        {%- for a in site.data.apartments %}
+        <option value="{{ a.id }}">{% if lang == 'el' %}{{ a.name_el }}{% else %}{{ a.name }}{% endif %}</option>
+        {%- endfor %}
+      </select>
+    </label>
+    <label><span>{{ t.quick.check_in }}</span><input type="date" name="in" data-min-today></label>
+    <label><span>{{ t.quick.check_out }}</span><input type="date" name="out" data-min-today></label>
+    <label>
+      <span>{{ t.quick.guests }}</span>
+      <select name="adults">
+        {%- for n in (1..site.booking.max_guests) %}
+        <option{% if n == 2 %} selected{% endif %}>{{ n }}</option>
+        {%- endfor %}
+      </select>
+    </label>
+    <button class="btn" type="submit">{{ t.quick.submit }}</button>
+  </form>
+</section>
+
+<section class="section welcome">
+  <div class="wrap split">
+    <div>
+      <h2 class="h-display">{{ t.welcome_title }}</h2>
+      {%- for p in t.welcome_text %}
+      <p>{{ p }}</p>
+      {%- endfor %}
+    </div>
+    <ul class="features plain">
+      {%- for f in t.features %}
+      <li>
+        <span class="feature-icon">{% include icon.html name=f.icon %}</span>
+        <div><h3>{{ f.title }}</h3><p>{{ f.text }}</p></div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section-tint" id="apartments">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="h-display">{{ t.apartments_title }}</h2>
+      <p>{{ t.apartments_intro }}</p>
+    </header>
+    <div class="apt-grid">
+      {%- for a in site.data.apartments %}
+      {% include apartment-card.html apt=a %}
+      {%- endfor %}
+    </div>
+
+    <h3 class="amenities-title">{{ t.amenities_title }}</h3>
+    <ul class="amenities plain">
+      {%- assign common = "wifi,ac,heating,parking,kitchen,washer,tv,iron,hairdryer,linen" | split: "," %}
+      {%- for k in common %}
+      <li>{% include icon.html name=k %}{{ t.amenities[k] }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="heraklion">
+  <div class="wrap">
+    <div class="split split-top">
+      <header>
+        <h2 class="h-display">{{ t.heraklion_title }}</h2>
+        <p>{{ t.heraklion_text }}</p>
+      </header>
+      <dl class="distances">
+        {%- for d in t.distances %}
+        <div><dt>{{ d.place }}</dt><dd>{{ d.value }}</dd></div>
+        {%- endfor %}
+      </dl>
+    </div>
+    <div class="city-grid" data-gallery>
+      {%- assign city = "harbour-sunset,koules-fortress,lions-square,marina,loggia,harbour-night,seafront,venetian-arsenals" | split: "," %}
+      {%- for c in city %}
+      {%- assign cap = t.heraklion_photos[c] %}
+      <a class="city-{{ forloop.index }}" href="{{ '/assets/img/heraklion/' | append: c | append: '-1600.webp' | relative_url }}" data-caption="{{ cap }}">
+        {% include img.html dir="heraklion" src=c alt=cap sizes="(min-width: 900px) 33vw, 50vw" %}
+        <span class="cap">{{ cap }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="info">
+  <div class="wrap">
+    <header class="section-head"><h2 class="h-display">{{ t.info_title }}</h2></header>
+    <div class="info-grid">
+      {%- for i in t.info %}
+      <article class="info-card">
+        <span class="feature-icon">{% include icon.html name=i.icon %}</span>
+        <h3>{{ i.title }}</h3>
+        <p>{{ i.text }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="location">
+  <div class="wrap split">
+    <div>
+      <h2 class="h-display">{{ t.location_title }}</h2>
+      <p class="address">{% include icon.html name="pin" %}{{ site.contact.address }}</p>
+      <ul class="features plain">
+        {%- for d in t.directions %}
+        <li>
+          <span class="feature-icon">{% include icon.html name=d.icon %}</span>
+          <div><h3>{{ d.title }}</h3><p>{{ d.text }}</p></div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="map" data-map="https://maps.google.com/maps?q={{ site.contact.maps_query | url_encode }}&amp;z=15&amp;hl={{ lang }}&amp;output=embed">
+      <div class="map-placeholder">
+        {% include icon.html name="pin" %}
+        <button class="btn" type="button">{{ t.map_button }}</button>
+        <small>{{ t.map_note }} ·
+          <a href="https://www.google.com/maps/search/?api=1&amp;query={{ site.contact.maps_query | url_encode }}" target="_blank" rel="noopener">{{ t.open_maps }} ↗</a></small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2 class="h-display">{{ t.contact_title }}</h2>
+      <p>{{ t.contact_text }}</p>
+    </div>
+    <div class="contact-actions">
+      <a class="contact-card" href="tel:{{ site.contact.phone_link }}">
+        {% include icon.html name="phone" %}<span><small>{{ t.call }}</small>{{ site.contact.phone }}</span>
+      </a>
+      <a class="contact-card" href="https://wa.me/{{ site.contact.phone_link | remove: '+' }}" target="_blank" rel="noopener">
+        {% include icon.html name="whatsapp" %}<span><small>{{ t.whatsapp }}</small>{{ site.contact.phone }}</span>
+      </a>
+      <a class="contact-card" href="mailto:{{ site.contact.email }}">
+        {% include icon.html name="mail" %}<span><small>{{ t.email }}</small>{{ site.contact.email }}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": {{ site.title | jsonify }},
+  "url": {{ home | absolute_url | jsonify }},
+  "image": {{ '/assets/img/natural/01-living-1600.webp' | absolute_url | jsonify }},
+  "logo": {{ '/assets/img/brand/logo.webp' | absolute_url | jsonify }},
+  "telephone": {{ site.contact.phone_link | jsonify }},
+  "email": {{ site.contact.email | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mnisikli 23",
+    "postalCode": "713 05",
+    "addressLocality": "Heraklion",
+    "addressRegion": "Crete",
+    "addressCountry": "GR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": {{ site.contact.lat }}, "longitude": {{ site.contact.lng }} },
+  "checkinTime": "13:00",
+  "checkoutTime": "11:00",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Free parking", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true }
+  ]
+}
+</script>

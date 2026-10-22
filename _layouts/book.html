@@ -1,0 +1,104 @@
+---
+layout: default
+scripts: [/assets/js/booking.js]
+---
+{%- include lang.html -%}
+
+<section class="section book">
+  <div class="wrap">
+    <header class="section-head">
+      <h1 class="h-display">{{ t.book_title }}</h1>
+      <p>{{ t.book_intro }}</p>
+    </header>
+
+    <div class="book-layout" data-book>
+      <form class="book-form" id="book-form" novalidate>
+        <fieldset class="card">
+          <legend>{{ t.step_apartment }}</legend>
+          <div class="apt-pick">
+            {%- for a in site.data.apartments %}
+            <label class="apt-option">
+              <input type="radio" name="apartment" value="{{ a.id }}" required>
+              {%- assign cover = a.photos.first.src %}
+              {% include img.html dir=a.id src=cover alt="" sizes="(min-width: 640px) 220px, 100vw" %}
+              <span>
+                <strong>{% if lang == 'el' %}{{ a.name_el }}{% else %}{{ a.name }}{% endif %}</strong>
+                <small>{{ a.size }} {{ t.sqm }} · {{ t.guests_upto | replace: '%N', a.guests }}</small>
+              </span>
+            </label>
+            {%- endfor %}
+          </div>
+        </fieldset>
+
+        <fieldset class="card">
+          <legend>{{ t.step_dates }}</legend>
+          <div class="calendar" data-calendar></div>
+        </fieldset>
+
+        <fieldset class="card">
+          <legend>{{ t.step_details }}</legend>
+          <div class="fields">
+            <label>{{ t.adults }}
+              <select name="adults">
+                {%- for n in (1..site.booking.max_guests) %}<option{% if n == 2 %} selected{% endif %}>{{ n }}</option>{% endfor %}
+              </select>
+            </label>
+            <label>{{ t.children }}
+              <select name="children">
+                {%- assign maxc = site.booking.max_guests | minus: 1 %}
+                {%- for n in (0..maxc) %}<option>{{ n }}</option>{% endfor %}
+              </select>
+            </label>
+            <label>{{ t.first_name }} *<input name="first_name" autocomplete="given-name" required></label>
+            <label>{{ t.last_name }} *<input name="last_name" autocomplete="family-name" required></label>
+            <label>{{ t.email_label }} *<input type="email" name="email" autocomplete="email" required></label>
+            <label>{{ t.phone_label }} *<input type="tel" name="phone" autocomplete="tel" required></label>
+            <label>{{ t.country }} *<input name="country" autocomplete="country-name" required></label>
+            <label>{{ t.arrival_time }}<input type="time" name="arrival_time" min="13:00" max="23:59" step="900"></label>
+            <label class="span-2">{{ t.message }}<textarea name="message" rows="4" placeholder="{{ t.message_placeholder }}"></textarea></label>
+            <label class="check span-2"><input type="checkbox" name="accept" required> <span>{{ t.accept }} <a href="{{ home }}#info" target="_blank">↗</a></span></label>
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <button class="btn btn-block btn-lg" type="submit">{{ t.submit }}</button>
+        </fieldset>
+      </form>
+
+      <aside class="book-aside">
+        <div class="sticky-card summary">
+          <h2>{{ t.summary }}</h2>
+          <dl>
+            <div><dt>{{ t.quick.apartment }}</dt><dd data-sum="apartment">—</dd></div>
+            <div><dt>{{ t.quick.check_in }}</dt><dd data-sum="in">—</dd></div>
+            <div><dt>{{ t.quick.check_out }}</dt><dd data-sum="out">—</dd></div>
+            <div><dt>{{ t.quick.guests }}</dt><dd data-sum="guests">—</dd></div>
+          </dl>
+          <p class="sum-nights" data-sum="nights"></p>
+          <p class="sum-fee muted" data-sum="fee" hidden></p>
+          <p class="sum-warn" data-sum="warn" hidden></p>
+          {%- if site.booking.direct_discount > 0 %}
+          <p class="badge">{% include icon.html name="tag" %}{{ t.direct_badge | replace: '%N', site.booking.direct_discount }}</p>
+          {%- endif %}
+          <h3>{{ t.next_title }}</h3>
+          <ol class="steps">
+            {%- for s in t.next_steps %}<li>{{ s }}</li>{% endfor %}
+          </ol>
+          <div class="aside-contact">
+            <a data-whatsapp href="https://wa.me/{{ site.contact.phone_link | remove: '+' }}" target="_blank" rel="noopener">{% include icon.html name="whatsapp" %}{{ t.whatsapp }}</a>
+            <a href="tel:{{ site.contact.phone_link }}">{% include icon.html name="phone" %}{{ site.contact.phone }}</a>
+          </div>
+          <p class="muted small"><a href="{{ site.booking.booking_com_url }}" target="_blank" rel="noopener">{{ t.prefer_booking }} ↗</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="book-success card" data-success hidden tabindex="-1">
+      <span class="feature-icon">{% include icon.html name="check" %}</span>
+      <h2 class="h-display">{{ t.success_title }}</h2>
+      <p data-success-text>{{ t.success_text }}</p>
+      <a class="btn btn-ghost" href="{{ home }}">{{ t.back_home }}</a>
+    </div>
+  </div>
+</section>
+
+{% include booking-config.html %}

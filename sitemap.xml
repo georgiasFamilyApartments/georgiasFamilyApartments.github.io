@@ -1,0 +1,17 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for p in site.pages %}
+{%- if p.layout and p.layout != 'null' and p.no_alternate != true %}
+  {%- if p.lang == 'el' %}{% assign en = p.url | remove_first: '/el' %}{% assign el = p.url %}{% else %}{% assign en = p.url %}{% assign el = p.url | prepend: '/el' %}{% endif %}
+  <url>
+    <loc>{{ p.url | absolute_url }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en | absolute_url }}"/>
+    <xhtml:link rel="alternate" hreflang="el" href="{{ el | absolute_url }}"/>
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>

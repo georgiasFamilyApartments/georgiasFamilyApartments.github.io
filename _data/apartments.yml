@@ -1,0 +1,122 @@
+# The three apartments. Order here = order on the website.
+#
+# Adding photos: run tools/optimize-images.sh on the new pictures into
+# assets/img/<id>/, then add the file name (without -480/-960/-1600.webp)
+# to `photos` with a `tag` from the `photo_tags` list in _data/i18n.yml.
+# The first photo is the cover.
+
+- id: standard
+  name: Standard Apartment
+  name_el: Standard Διαμέρισμα
+  size: 70
+  guests: 6
+  bedrooms: 2
+  price_from:            # e.g. 55 → shows "from €55 / night"; leave empty to hide
+  amenities: [wifi, ac, heating, parking, kitchen, washer, tv, iron, hairdryer, veranda, cot]
+  beds:
+    en: ["Bedroom 1 · double bed", "Bedroom 2 · double bed and bunk bed", "Living room · sofa bed"]
+    el: ["Υπνοδωμάτιο 1 · διπλό κρεβάτι", "Υπνοδωμάτιο 2 · διπλό κρεβάτι και κουκέτα", "Σαλόνι · καναπές-κρεβάτι"]
+  summary:
+    en: Bright and practical, with a dining area for the whole family and a baby cot on request.
+    el: Φωτεινό και πρακτικό, με τραπεζαρία για όλη την οικογένεια και βρεφικό κρεβάτι κατόπιν αιτήματος.
+  description:
+    en: >-
+      Our Standard Apartment is a bright, airy 70 m² home with two bedrooms, a living room with sofa bed,
+      a dining area that seats the whole family, a fully equipped kitchen and one bathroom. Large windows
+      let in plenty of light, and the veranda with table and chairs looks over the garden. Travelling with
+      a little one? A travel cot is ready for you.
+    el: >-
+      Το Standard Διαμέρισμα είναι ένα φωτεινό, ευάερο σπίτι 70 τ.μ. με δύο υπνοδωμάτια, σαλόνι με
+      καναπέ-κρεβάτι, τραπεζαρία για όλη την οικογένεια, πλήρως εξοπλισμένη κουζίνα και ένα μπάνιο. Τα μεγάλα
+      παράθυρα φέρνουν άπλετο φως και η βεράντα με τραπέζι και καρέκλες βλέπει στον κήπο. Ταξιδεύετε με
+      μωρό; Σας περιμένει βρεφικό κρεβατάκι.
+  photos:
+    - { src: 01-living, tag: living }
+    - { src: 05-bedroom-double, tag: bedroom }
+    - { src: 03-dining, tag: dining }
+    - { src: 07-bedroom, tag: bedroom }
+    - { src: 02-living, tag: living }
+    - { src: 04-dining, tag: dining }
+    - { src: 06-bedroom, tag: bedroom }
+    - { src: 08-kitchen, tag: kitchen }
+    - { src: 09-bathroom, tag: bathroom }
+    - { src: 10-wardrobe, tag: wardrobe }
+    - { src: 11-cot, tag: cot }
+    - { src: 12-cot, tag: cot }
+
+- id: natural
+  name: Natural Apartment
+  name_el: Natural Διαμέρισμα
+  size: 92
+  guests: 6
+  bedrooms: 2
+  price_from:
+  amenities: [wifi, ac, heating, parking, kitchen, washer, tv, iron, hairdryer, fireplace]
+  beds:
+    en: ["Bedroom 1 · double bed", "Bedroom 2 · two single beds", "Living room · two sofa beds"]
+    el: ["Υπνοδωμάτιο 1 · διπλό κρεβάτι", "Υπνοδωμάτιο 2 · δύο μονά κρεβάτια", "Σαλόνι · δύο καναπέδες-κρεβάτια"]
+  summary:
+    en: Warm and spacious, with a fireplace, a family kitchen and a bougainvillea-framed entrance.
+    el: Ζεστό και ευρύχωρο, με τζάκι, οικογενειακή κουζίνα και είσοδο στολισμένη με βουκαμβίλιες.
+  description:
+    en: >-
+      The Natural Apartment is our warmest space: 92 m² with a cosy living room built around a fireplace,
+      two bedrooms, a wooden fully equipped kitchen with dining table, and a bathroom with shower and washing
+      machine. Double-glazed windows, screens and solar hot water keep it comfortable all year, and you walk
+      in under a cascade of bougainvillea.
+    el: >-
+      Το Natural Διαμέρισμα είναι ο πιο ζεστός μας χώρος: 92 τ.μ. με άνετο σαλόνι γύρω από το τζάκι, δύο
+      υπνοδωμάτια, ξύλινη πλήρως εξοπλισμένη κουζίνα με τραπεζαρία και μπάνιο με ντουζιέρα και πλυντήριο.
+      Διπλά τζάμια, σίτες και ηλιακός θερμοσίφωνας το κάνουν άνετο όλο τον χρόνο, ενώ μπαίνετε κάτω από
+      έναν καταρράκτη από βουκαμβίλιες.
+  photos:
+    - { src: 01-living, tag: living }
+    - { src: 06-bedroom-double, tag: bedroom }
+    - { src: 05-kitchen, tag: kitchen }
+    - { src: 02-living-fireplace, tag: fireplace }
+    - { src: 17-bougainvillea, tag: entrance }
+    - { src: 03-living, tag: living }
+    - { src: 04-living-kitchen, tag: living }
+    - { src: 07-bedroom-twin, tag: bedroom }
+    - { src: 08-bedroom, tag: bedroom }
+    - { src: 16-fireplace, tag: fireplace }
+    - { src: 09-hallway, tag: hallway }
+    - { src: 10-bathroom, tag: bathroom }
+    - { src: 12-shower, tag: bathroom }
+    - { src: 13-sink, tag: bathroom }
+    - { src: 11-laundry, tag: laundry }
+    - { src: 14-iron, tag: iron }
+    - { src: 15-entrance, tag: entrance }
+
+- id: garden
+  name: Garden Apartment
+  name_el: Garden Διαμέρισμα
+  size: 100
+  guests: 6
+  bedrooms: 2
+  price_from:
+  amenities: [wifi, ac, heating, parking, kitchen, washer, tv, iron, hairdryer, garden]
+  beds:
+    en: ["Bedroom 1 · double bed", "Bedroom 2 · two single beds", "Living room · two sofa beds"]
+    el: ["Υπνοδωμάτιο 1 · διπλό κρεβάτι", "Υπνοδωμάτιο 2 · δύο μονά κρεβάτια", "Σαλόνι · δύο καναπέδες-κρεβάτια"]
+  summary:
+    en: Our largest apartment, opening onto a shaded garden patio for breakfast outdoors.
+    el: Το μεγαλύτερο διαμέρισμά μας, με σκιερή αυλή-κήπο για πρωινό στο ύπαιθρο.
+  description:
+    en: >-
+      At 100 m², the Garden Apartment is our largest: a generous living room with two sofa beds, a big
+      dining table, two bedrooms, a fully equipped kitchen and a bathroom with washing machine. Its best
+      feature is outside — a private, shaded garden patio, perfect for slow breakfasts and warm Cretan evenings.
+    el: >-
+      Με 100 τ.μ., το Garden Διαμέρισμα είναι το μεγαλύτερό μας: ευρύχωρο σαλόνι με δύο καναπέδες-κρεβάτια,
+      μεγάλη τραπεζαρία, δύο υπνοδωμάτια, πλήρως εξοπλισμένη κουζίνα και μπάνιο με πλυντήριο. Το καλύτερό
+      του σημείο είναι έξω — μια ιδιωτική, σκιερή αυλή-κήπος, ιδανική για χαλαρά πρωινά και ζεστά κρητικά βράδια.
+  photos:
+    - { src: 01-living, tag: living }
+    - { src: 04-garden, tag: garden }
+    - { src: 05-bedroom-double, tag: bedroom }
+    - { src: 03-dining, tag: dining }
+    - { src: 02-living, tag: living }
+    - { src: 06-bedroom-twin, tag: bedroom }
+    - { src: 07-bedroom-single, tag: bedroom }
+    - { src: 08-bathroom, tag: bathroom }
