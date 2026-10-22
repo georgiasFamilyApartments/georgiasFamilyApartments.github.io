@@ -249,6 +249,11 @@
     if (bc && a) bc.href = a.bookingUrl;
     const wa = $('[data-whatsapp]');
     if (wa) wa.href = `https://wa.me/${cfg.phone.replace('+', '')}?text=${encodeURIComponent(messageText(false))}`;
+    const em = $('[data-email]');
+    if (em) {
+      const subject = a ? `Booking request: ${a.nameEn}` : 'Booking request';
+      em.href = `mailto:${cfg.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageText(false))}`;
+    }
   }
 
   function messageText(full = true) {

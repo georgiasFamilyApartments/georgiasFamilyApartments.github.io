@@ -322,7 +322,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .aside-list strong { display: block; color: var(--ink); }
 .sticky-card .badge { margin-top: 1rem; }
 .aside-contact { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
-.aside-contact a { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none; font-weight: 600; font-size: .95rem; }
+.aside-contact a { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none; font-weight: 600; font-size: .95rem; overflow-wrap: anywhere; }
+.aside-contact + p { margin: 1rem 0 0; }
 .cal-cta { margin-top: 1.25rem; }
 
 /* Calendar */
