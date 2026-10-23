@@ -33,16 +33,19 @@ locations:
 booking:
   # Free key from https://web3forms.com (enter the email that should receive
   # booking requests). While empty, the form opens the guest's email app instead.
-  web3forms_key: ""
-  # Booking.com rating shown on the home page (Mnisikli listing); leave empty to hide
-  rating: 8.7
-  reviews: 36
+  web3forms_key: "aabf6dbf-05ca-4b8c-8eb1-276c623d24cd"
   direct_discount: 10        # % shown as "book direct" saving; set 0 to hide
   min_nights: 1
   max_guests: 6
   # State climate-resilience fee per night, paid on arrival
   climate_fee_summer: 8      # April–October
   climate_fee_winter: 2      # November–March
+
+# ── Visitor statistics ──────────────────────────────────────────────────
+# Free, cookie-free counter: sign up at https://www.goatcounter.com and put your
+# code here (e.g. "georgias" for georgias.goatcounter.com). Empty = no tracking.
+analytics:
+  goatcounter: ""
 
 # ── Build ────────────────────────────────────────────────────────────────
 markdown: kramdown

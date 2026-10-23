@@ -17,7 +17,11 @@
   <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
   <meta property="og:description" content="{{ page.description | default: t.meta_description | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ page.og_image | default: '/assets/img/brand/og-image.jpg' | absolute_url }}">
+  {%- if page.apt %}{% assign og = '/assets/img/og/' | append: page.apt | append: '.jpg' %}{% else %}{% assign og = page.og_image | default: '/assets/img/og/home.jpg' %}{% endif %}
+  <meta property="og:image" content="{{ og | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:locale" content="{% if lang == 'el' %}el_GR{% else %}en_GB{% endif %}">
   <meta name="theme-color" content="#f7f0ee">
   <link rel="icon" type="image/png" href="{{ '/assets/img/brand/favicon.png' | relative_url }}">
@@ -31,6 +35,9 @@
   <link rel="preload" as="image" href="{{ preload }}-960.webp" imagesrcset="{{ preload }}-480.webp 480w, {{ preload }}-960.webp 960w, {{ preload }}-1600.webp 1600w" imagesizes="{{ page.preload_sizes | default: layout.preload_sizes | default: '100vw' }}">
   {%- endif %}
   <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  {%- if site.analytics.goatcounter != "" and site.analytics.goatcounter %}
+  <script data-goatcounter="https://{{ site.analytics.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  {%- endif %}
   {%- assign scripts = page.scripts | default: layout.scripts %}
   {%- for script in scripts %}
   <script src="{{ script | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
@@ -64,6 +71,10 @@
   <main id="main">
     {{ content }}
   </main>
+
+  <a class="wa-fab" href="https://wa.me/{{ site.contact.phone_link | remove: '+' }}" target="_blank" rel="noopener" aria-label="{{ t.whatsapp_fab }}" title="{{ t.whatsapp_fab }}">
+    {% include icon.html name="whatsapp" %}
+  </a>
 
   <footer class="site-footer">
     <div class="wrap footer-grid">

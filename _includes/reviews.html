@@ -1,0 +1,54 @@
+{%- comment -%}
+  Guest reviews. Without params: summary + featured reviews (home page).
+  With apt=<id>: only that apartment's reviews, no summary (renders nothing if there are none).
+{%- endcomment -%}
+{%- assign R = site.data.reviews -%}
+{%- if include.apt -%}
+  {%- assign items = R.items | where: "apt", include.apt -%}
+{%- else -%}
+  {%- assign items = R.items | where: "featured", true -%}
+{%- endif -%}
+{%- if items.size > 0 -%}
+{%- assign source_url = site.locations[R.source].booking_com_url -%}
+<div class="reviews">
+  {%- unless include.apt %}
+  <div class="reviews-summary">
+    <a class="score-big" href="{{ source_url }}" target="_blank" rel="noopener">
+      <strong>{{ R.score }}</strong>
+      <span><b>{{ t.reviews.score_word }}</b>{{ t.reviews.count | replace: '%N', R.count }}</span>
+    </a>
+    <ul class="score-cats plain">
+      {%- for c in R.categories %}
+      <li>
+        <span>{{ t.reviews.cats[c.key] }}</span>
+        <span class="bar"><i style="width: {{ c.score | times: 10 }}%"></i></span>
+        <b>{{ c.score }}</b>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endunless %}
+  <div class="review-grid">
+    {%- for r in items %}
+    {%- assign ym = r.date | split: '-' %}
+    {%- assign month = ym[1] | plus: 0 | minus: 1 %}
+    {%- assign apt = site.data.apartments | where: "id", r.apt | first %}
+    <figure class="review-card">
+      <span class="review-score">{{ r.score }}</span>
+      <blockquote>{% if r[lang] %}{{ r[lang] }}{% else %}{{ r.original }}{% endif %}</blockquote>
+      <figcaption>
+        <strong>{{ r.name }}</strong> · {{ t.reviews.countries[r.country] }}
+        <small>{% unless include.apt %}{% if lang == 'el' %}{{ apt.name_el }}{% else %}{{ apt.name }}{% endif %} · {% endunless %}{{ t.reviews.months[month] }} {{ ym[0] }}</small>
+      </figcaption>
+      <details>
+        <summary>{{ t.reviews.translated | replace: '%L', t.reviews.languages[r.country] }}</summary>
+        <p lang="{{ r.country }}">“{{ r.original }}”</p>
+      </details>
+    </figure>
+    {%- endfor %}
+  </div>
+  {%- unless include.apt %}
+  <a class="link-arrow" href="{{ source_url }}" target="_blank" rel="noopener">{{ t.reviews.all | replace: '%N', R.count }} {% include icon.html name="arrow" %}</a>
+  {%- endunless %}
+</div>
+{%- endif -%}

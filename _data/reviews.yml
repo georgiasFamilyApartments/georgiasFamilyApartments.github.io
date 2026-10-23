@@ -1,0 +1,63 @@
+# Guest reviews from Booking.com (listing "Georgia's Family Apartment", Mnisikli).
+# Only copy real reviews. `original` is the guest's own text; `en`/`el` are translations.
+# `featured: true` → shown on the home page; every review also shows on its apartment's page.
+
+score: 8.7
+count: 36
+source: mnisikli          # which location's Booking.com link "Read all reviews" opens
+categories:               # Booking.com category scores (out of 10)
+  - { key: staff, score: 9.4 }
+  - { key: cleanliness, score: 9.1 }
+  - { key: facilities, score: 8.7 }
+  - { key: value, score: 8.5 }
+
+items:
+  - name: Xavier
+    country: fr
+    apt: garden
+    date: 2025-08
+    score: 10
+    featured: true
+    original: "Quartier tres calme, appartement spacieux tres bien equipé, hote hyper acceuillant, tres gentil... je recommande vivement."
+    en: "Very quiet neighbourhood, a spacious and very well-equipped apartment, and an extremely welcoming, very kind host… I highly recommend it."
+    el: "Πολύ ήσυχη γειτονιά, ευρύχωρο και πολύ καλά εξοπλισμένο διαμέρισμα, εξαιρετικά φιλόξενος και πολύ ευγενικός οικοδεσπότης… Το συστήνω ανεπιφύλακτα."
+
+  - name: Nadège
+    country: fr
+    apt: standard
+    date: 2024-08
+    score: 9
+    featured: true
+    original: "Les hôtes étaient charmants et nous ont attendus dans la rue proche de l'appartement pour nous remettre les cléfs. Appartement très propre et tout équipé. Parfait pour un prix très raisonnable"
+    en: "The hosts were charming and waited for us in the street near the apartment to hand over the keys. A very clean, fully equipped apartment. Perfect, for a very reasonable price."
+    el: "Οι οικοδεσπότες ήταν υπέροχοι και μας περίμεναν στον δρόμο κοντά στο διαμέρισμα για να μας δώσουν τα κλειδιά. Πολύ καθαρό και πλήρως εξοπλισμένο διαμέρισμα. Τέλειο, σε πολύ λογική τιμή."
+
+  - name: Tina
+    country: es
+    apt: garden
+    date: 2025-07
+    score: 10
+    featured: true
+    original: "Es muy espacioso y dispone de todo lo que necesitas. La dueña es muy amable. Me olvidé unas prendas y me escribió para recordármelo y recogerlas."
+    en: "Very spacious, with everything you need. The owner is very kind — I forgot some clothes and she wrote to remind me so I could collect them."
+    el: "Πολύ ευρύχωρο, με ό,τι χρειάζεστε. Η ιδιοκτήτρια είναι πολύ ευγενική — ξέχασα κάποια ρούχα και μου έγραψε για να μου το θυμίσει και να τα παραλάβω."
+
+  - name: Mauro
+    country: it
+    apt: standard
+    date: 2024-09
+    score: 10
+    featured: true
+    original: "Proprietari molto accoglienti, gentili e disponibili. Casa molto comoda e con tutti i dispositivi necessari per un soggiorno. Consigliatissimo!"
+    en: "Very welcoming, kind and helpful owners. A very comfortable home with everything you need for your stay. Highly recommended!"
+    el: "Πολύ φιλόξενοι, ευγενικοί και εξυπηρετικοί ιδιοκτήτες. Πολύ άνετο σπίτι με όλα όσα χρειάζεστε για τη διαμονή σας. Το συνιστώ ανεπιφύλακτα!"
+
+  - name: Rita
+    country: it
+    apt: natural
+    date: 2024-08
+    score: 10
+    featured: false
+    original: "L' ampiezza dell'appartamento, la cucina ben arredata e ben attrezzata."
+    en: "How spacious the apartment is, and the well-furnished, well-equipped kitchen."
+    el: "Το πόσο ευρύχωρο είναι το διαμέρισμα και η καλά επιπλωμένη, καλά εξοπλισμένη κουζίνα."

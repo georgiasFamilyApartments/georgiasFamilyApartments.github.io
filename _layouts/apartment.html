@@ -63,6 +63,12 @@ preload_sizes: "(min-width: 800px) 50vw, 100vw"
       <h2>{{ t.location_heading }}</h2>
       {% include location-card.html id=a.location wide=true %}
 
+      {%- capture apt_reviews %}{% include reviews.html apt=a.id %}{% endcapture %}
+      {%- if apt_reviews != "" %}
+      <h2>{{ t.reviews.apt_title }}</h2>
+      {{ apt_reviews }}
+      {%- endif %}
+
       <h2 id="availability">{{ t.availability }}</h2>
       <p>{{ t.availability_text }}</p>
       <div class="calendar" data-calendar data-apt="{{ a.id }}"></div>
@@ -106,5 +112,13 @@ preload_sizes: "(min-width: 800px) 50vw, 100vw"
     </div>
   </div>
 </section>
+
+<div class="mobile-cta" data-mobile-cta>
+  <div>
+    <strong>{{ a_name }}</strong>
+    <small>{{ a.size }} {{ t.sqm }} · {{ t.guests_upto | replace: '%N', a.guests }}</small>
+  </div>
+  <a class="btn btn-sm" href="#availability">{{ t.hero_cta }}</a>
+</div>
 
 {% include booking-config.html %}

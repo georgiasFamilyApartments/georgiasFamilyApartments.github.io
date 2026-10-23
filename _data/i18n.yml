@@ -85,6 +85,19 @@ en:
     balcony: "Balcony"
     view: "View"
 
+  reviews:
+    title: "What our guests say"
+    apt_title: "What guests said"
+    score_word: "Fabulous"
+    count: "%N reviews on Booking.com"
+    all: "Read all %N reviews on Booking.com"
+    translated: "Translated from %L · show original"
+    cats: { staff: "Staff", cleanliness: "Cleanliness", facilities: "Facilities", value: "Value for money" }
+    countries: { fr: "France", es: "Spain", it: "Italy", de: "Germany", gr: "Greece", gb: "United Kingdom" }
+    languages: { fr: "French", es: "Spanish", it: "Italian", de: "German", gr: "Greek", gb: "English" }
+    months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  whatsapp_fab: "Chat with us on WhatsApp"
+
   heraklion_title: "Discover Heraklion"
   heraklion_text: "Crete's capital is lively, historic and full of good food. From either address you're a few minutes from the Venetian harbour and Koules fortress, Lions Square and the market streets — and Knossos, the island's most famous Minoan palace, is a short drive away."
   heraklion_photos:
@@ -285,6 +298,19 @@ el:
     garden: "Αυλή-κήπος"
     balcony: "Μπαλκόνι"
     view: "Θέα"
+
+  reviews:
+    title: "Τι λένε οι επισκέπτες μας"
+    apt_title: "Τι είπαν οι επισκέπτες"
+    score_word: "Εξαιρετικό"
+    count: "%N κριτικές στο Booking.com"
+    all: "Διαβάστε και τις %N κριτικές στο Booking.com"
+    translated: "Μετάφραση από τα %L · δείτε το πρωτότυπο"
+    cats: { staff: "Προσωπικό", cleanliness: "Καθαριότητα", facilities: "Παροχές", value: "Σχέση ποιότητας-τιμής" }
+    countries: { fr: "Γαλλία", es: "Ισπανία", it: "Ιταλία", de: "Γερμανία", gr: "Ελλάδα", gb: "Ηνωμένο Βασίλειο" }
+    languages: { fr: "γαλλικά", es: "ισπανικά", it: "ιταλικά", de: "γερμανικά", gr: "ελληνικά", gb: "αγγλικά" }
+    months: ["Ιαν", "Φεβ", "Μαρ", "Απρ", "Μάι", "Ιουν", "Ιουλ", "Αυγ", "Σεπ", "Οκτ", "Νοε", "Δεκ"]
+  whatsapp_fab: "Μιλήστε μαζί μας στο WhatsApp"
 
   heraklion_title: "Ανακαλύψτε το Ηράκλειο"
   heraklion_text: "Η πρωτεύουσα της Κρήτης είναι ζωντανή, ιστορική και γεμάτη καλό φαγητό. Και από τις δύο διευθύνσεις απέχετε λίγα λεπτά από το ενετικό λιμάνι και τον Κούλε, τα Λιοντάρια και την αγορά — και η Κνωσός, το διασημότερο μινωικό ανάκτορο, είναι σε μικρή απόσταση με το αυτοκίνητο."

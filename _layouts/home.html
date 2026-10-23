@@ -19,9 +19,10 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
         {%- if site.booking.direct_discount > 0 %}
         <p class="badge">{% include icon.html name="tag" %}{{ t.direct_badge | replace: '%N', site.booking.direct_discount }}</p>
         {%- endif %}
-        {%- if site.booking.rating %}
-        <a class="rating" href="{{ site.locations.mnisikli.booking_com_url }}" target="_blank" rel="noopener">
-          <strong>{{ site.booking.rating }}</strong>{{ t.rating | replace: '%R', site.booking.reviews }}
+        {%- assign R = site.data.reviews %}
+        {%- if R.score %}
+        <a class="rating" href="#reviews">
+          <strong>{{ R.score }}</strong>{{ t.rating | replace: '%R', R.count }}
         </a>
         {%- endif %}
       </div>
@@ -98,7 +99,14 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
   </div>
 </section>
 
-<section class="section" id="heraklion">
+<section class="section" id="reviews">
+  <div class="wrap">
+    <header class="section-head"><h2 class="h-display">{{ t.reviews.title }}</h2></header>
+    {% include reviews.html %}
+  </div>
+</section>
+
+<section class="section section-tint" id="heraklion">
   <div class="wrap">
     <header class="section-head">
       <h2 class="h-display">{{ t.heraklion_title }}</h2>
@@ -117,7 +125,7 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
   </div>
 </section>
 
-<section class="section section-tint" id="info">
+<section class="section" id="info">
   <div class="wrap">
     <header class="section-head"><h2 class="h-display">{{ t.info_title }}</h2></header>
     <div class="info-grid">
@@ -132,7 +140,7 @@ preload_sizes: "(min-width: 900px) 34vw, 100vw"
   </div>
 </section>
 
-<section class="section" id="location">
+<section class="section section-tint" id="location">
   <div class="wrap">
     <header class="section-head">
       <h2 class="h-display">{{ t.location_title }}</h2>

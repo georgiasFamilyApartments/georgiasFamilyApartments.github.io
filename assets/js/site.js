@@ -103,6 +103,18 @@
     });
   });
 
+  // Mobile booking bar: hide it while the calendar itself is on screen
+  const cta = document.querySelector('[data-mobile-cta]');
+  const cal = document.querySelector('[data-calendar]');
+  if (cta && cal) {
+    const update = () => {
+      const r = cal.getBoundingClientRect();
+      cta.classList.toggle('is-hidden', r.top < innerHeight && r.bottom > 0);
+    };
+    addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
   // Quick search on the home page: no past dates, check-out after check-in
   const quick = document.querySelector('.quick');
   if (quick) {
